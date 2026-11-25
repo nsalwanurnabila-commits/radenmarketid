@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090d20">
+<title>RadenMarket — Marketplace Akun Game & Jasa</title>
+<meta name="description" content="Temukan akun game pilihanmu di RadenMarket. Belanja mudah, aman, dan terpercaya.">
+<style>
+:root{--bg:#080b19;--panel:#10162d;--panel2:#141c38;--text:#f5f6ff;--muted:#9ca8c5;--purple:#a9bfff;--blue:#789bff;--line:#263253;--green:#70e2b1}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -12%,#1d2852 0,#0b1024 38%,var(--bg) 76%);color:var(--text);font:14px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+button,input,textarea,select{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 16px;font-weight:750;transition:.18s transform,.18s opacity}button:active{transform:scale(.98)}
+a{color:inherit;text-decoration:none}.wrap{max-width:1120px;margin:auto;padding:0 22px}
+.top{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff0d;gap:14px}
+.brand{display:flex;align-items:center;gap:11px;font-size:19px;font-weight:900;letter-spacing:-.5px}.brandmark{width:52px;height:52px;display:grid;place-items:center;flex:0 0 52px;background:transparent;box-shadow:none}.brandmark img{width:100%;height:100%;object-fit:contain;display:block}
+.brand small{display:block;color:#8fa2d2;font-size:9px;letter-spacing:2px;line-height:1.1;font-weight:800}
+.nav{display:flex;align-items:center;gap:9px}.navlink{color:#cbd4ef;border:1px solid transparent;padding:9px 13px;font-weight:700}.nav button{background:transparent;color:#cbd4ef;border:1px solid transparent;padding:9px 13px}.nav .admin{border-color:#354365;background:#111831}
+.menu{display:none;background:#151e3b;color:#fff;border:1px solid var(--line);font-size:19px;padding:7px 12px}
+.quicklinks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0 0}.quick-card{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 18px;border:1px solid #2b477e;border-radius:20px;background:linear-gradient(120deg,#141d3c,#17182f);box-shadow:0 10px 28px #02061555;color:#edf3ff;font-weight:850;transition:.18s transform,.18s border-color}.quick-card:hover{transform:translateY(-2px);border-color:#779cff}.quick-card.hot{grid-column:1/-1;min-height:86px;background:linear-gradient(110deg,#291b35,#151d3c 55%,#101a38);border-color:#4b3762}.quick-card .qleft{display:flex;align-items:center;gap:13px}.quick-card .qicon{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:#24325b;color:#8eb7ff;font-size:25px;overflow:hidden}.quick-card .qicon-logo{overflow:visible}.quick-card .qicon-logo img{width:38px;height:38px;max-width:100%;object-fit:contain;display:block;filter:drop-shadow(0 0 5px #318cff88)}.quick-card.hot .qicon{background:#4b263a;color:#ff718b}.quick-card .qtitle{display:block;font-size:16px;line-height:1.25}.quick-card .qtag{display:inline-block;margin-bottom:4px;padding:2px 8px;border-radius:7px;background:#e94a65;color:#fff;font-size:10px;letter-spacing:.8px}.quick-card .qarrow{font-size:22px;color:#9db8ff}.hero{margin:18px 0 36px;padding:0;border:1px solid #244b9b;border-radius:24px;background:#07112e;box-shadow:0 18px 55px #02061570;overflow:hidden}
+.hero-main{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center}
+.eyebrow{color:#a9bcff;font-weight:850;letter-spacing:1.8px;font-size:11px;text-transform:uppercase}
+.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.08;letter-spacing:-1.9px;margin:13px 0 14px;max-width:540px}
+.hero h1 span{color:#a9c1ff}.hero p{color:var(--muted);font-size:14px;max-width:470px;margin:0 0 19px}
+.actions{display:flex;gap:10px;flex-wrap:wrap}.btn{background:linear-gradient(110deg,#c3d4ff,#8baaff);color:#101a39;box-shadow:0 8px 22px #7598ff28}.secondary{background:#1a2546;border:1px solid #39496e;color:#edf2ff}.ghost{background:transparent;border:1px solid var(--line);color:#fff}
+.trust{display:flex;gap:14px;flex-wrap:wrap;margin-top:19px;color:#a9b6d5;font-size:11px}.trust span:before{content:"✧";color:#9cb8ff;margin-right:6px}
+.hero-art{position:relative;background:#07112e}.hero-art img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border:0;border-radius:0;box-shadow:none}
+.stockstrip{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #ffffff14;margin:0 20px;padding:16px 0 18px}.stockstrip strong{font-size:25px;display:block;line-height:1.1}.stockstrip span{font-size:11px;color:var(--muted)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:0 0 15px}.section-head h2{font-size:24px;letter-spacing:-.7px;margin:0}.section-head p{color:var(--muted);font-size:11px;margin:3px 0 0}
+.catalog{margin:34px 0 25px}.filters{padding:15px;border:1px solid var(--line);border-radius:17px;background:#10162c;margin-bottom:15px}
+.filterrow{display:grid;grid-template-columns:1.5fr 1fr 1fr auto;gap:9px}.search,.field input,.field textarea,.field select,.loginbox input,.filterrow select{background:#0a1022;border:1px solid #29375a;border-radius:11px;padding:11px 12px;color:#f5f6ff;width:100%;outline:none}.search:focus,.filterrow select:focus{border-color:#829fff}
+.filterbottom{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}.chips{display:flex;gap:7px;flex-wrap:wrap}.chip{padding:6px 11px;border-radius:30px;background:#0d1429;border:1px solid #293653;color:#aebbd7;font-size:10px;font-weight:750}.chip.active{background:#202f58;border-color:#789bff;color:#dce6ff}
+.reset{font-size:10px;color:#aab9e0;background:none;padding:5px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{overflow:hidden;border:1px solid #283657;border-radius:17px;background:linear-gradient(160deg,#151e39,#0f152b);box-shadow:0 12px 30px #02061545}
+.cover{aspect-ratio:auto;height:auto;min-height:0;background:linear-gradient(135deg,#27365f,#11172c);position:relative;display:grid;place-items:center;font-size:43px;color:#91aaff;overflow:hidden}.cover img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;object-position:center;cursor:default}.cover-zoom{position:absolute;right:8px;bottom:8px;z-index:2;padding:7px 10px;border:1px solid #8bb5ff;border-radius:9px;background:#071329eF;color:#fff;font-size:12px;font-weight:800;box-shadow:0 3px 12px #0008}.cardbody{padding:15px}.tag{display:inline-flex;align-items:center;gap:5px;color:#8de8c1;background:#12382f;padding:4px 8px;border-radius:20px;font-size:9px;font-weight:850}.tag:before{content:"";width:5px;height:5px;background:currentColor;border-radius:50%}.tag.sold{color:#ffb0bd;background:#47232e}.card h3{margin:9px 0 4px;font-size:16px}.desc{font-size:11px;color:#a5b0cb;min-height:38px;white-space:pre-wrap}.price-line{border-top:1px solid #ffffff12;margin-top:13px;padding-top:12px;display:flex;align-items:end;justify-content:space-between;gap:8px}.price-label{font-size:9px;color:#8592b1}.price{font-size:16px;font-weight:900}.detail{display:inline-block;text-decoration:none;text-align:center;background:#1c294b;color:#e4ebff;border:1px solid #354a76;padding:8px 11px;font-size:10px;border-radius:10px;cursor:pointer}
+.empty{grid-column:1/-1;padding:32px 18px;text-align:center;border:1px dashed #344263;border-radius:16px;color:var(--muted);background:#10162b}
+/* Skeleton loading katalog RadenMarket */
+.skeleton-card{overflow:hidden;border:1px solid #283657;border-radius:17px;background:linear-gradient(160deg,#151e39,#0f152b)}
+.skeleton-shimmer{position:relative;overflow:hidden;background:#202c4b}
+.skeleton-shimmer:after{content:"";position:absolute;inset:0;transform:translateX(-100%);background:linear-gradient(90deg,transparent,#789bff20,transparent);animation:skeleton-shine 1.35s ease-in-out infinite}
+.skeleton-cover{height:174px}
+.skeleton-body{padding:15px}
+.skeleton-line{height:10px;border-radius:8px;margin:0 0 11px}
+.skeleton-tag{width:64px;height:19px;border-radius:20px;margin-bottom:13px}
+.skeleton-title{width:68%;height:16px}
+.skeleton-desc{width:95%;height:9px}
+.skeleton-desc.short{width:62%}
+.skeleton-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #ffffff12;margin-top:17px;padding-top:13px}
+.skeleton-price{width:42%;height:19px}
+.skeleton-button{width:65px;height:31px;border-radius:10px}
+@keyframes skeleton-shine{100%{transform:translateX(100%)}}
+@media(prefers-reduced-motion:reduce){.skeleton-shimmer:after{animation:none;transform:none;background:#ffffff08}}
+
+.cta{margin:36px 0;padding:22px;border:1px solid #2d3d63;border-radius:19px;background:linear-gradient(120deg,#151f40,#10162c);display:flex;align-items:center;justify-content:space-between;gap:18px}.cta h2{font-size:19px;margin:0 0 4px}.cta p{font-size:12px;color:var(--muted);margin:0}
+footer{border-top:1px solid #ffffff12;margin-top:44px;padding:38px 0 34px;color:var(--muted);font-size:14px;background:linear-gradient(180deg,#080b19 0%,#070a17 100%)}
+.footer-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:34px 42px;align-items:start}
+.footer-brand{min-width:0}.footer-logo{width:92px;height:82px;object-fit:contain;display:block;margin:0 0 14px -5px;filter:drop-shadow(0 0 9px #829fff35)}
+.footer-description{max-width:470px;color:var(--muted);font-size:14px;line-height:1.8;margin:0 0 20px}
+.footer-wa{display:inline-flex;align-items:center;gap:9px;padding:12px 17px;border:1px solid #39496e;border-radius:17px;background:#151f3d;color:#e6edff;font-weight:850;box-shadow:0 8px 22px #02061535;transition:.18s transform,.18s border-color}
+.footer-wa:hover{transform:translateY(-2px);border-color:#829fff}.footer-col h3{margin:5px 0 18px;color:#f0f3ff;font-size:17px;letter-spacing:-.4px}.footer-links{display:grid;gap:13px}.footer-links a{width:fit-content;color:var(--muted);font-size:14px;transition:.18s color}.footer-links a:hover{color:#dce6ff}
+.footer-trust{grid-column:1/-1;margin-top:2px}.footer-trust h3{margin:0 0 15px;color:#f0f3ff;font-size:17px}.footer-trust-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 24px}.footer-trust-item{display:flex;align-items:flex-start;gap:10px;color:var(--muted);line-height:1.7}.footer-trust-icon{flex:0 0 16px;color:#a9bfff;font-weight:900}.footer-bottom{grid-column:1/-1;border-top:1px solid #263253;margin-top:8px;padding-top:18px;display:flex;justify-content:space-between;gap:12px;color:#7f8cab;font-size:11px}
+@media(max-width:650px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px 22px}.footer-brand{grid-column:1/-1}.footer-logo{width:92px;height:82px}.footer-description{font-size:14px}.footer-col h3{font-size:17px;margin-bottom:15px}.footer-links{gap:12px}.footer-trust{grid-column:1/-1;margin-top:2px}.footer-trust-list{grid-template-columns:1fr;gap:12px}.footer-bottom{grid-column:1/-1;flex-direction:column;gap:6px}}
+@media(max-width:380px){.footer-grid{gap:24px 14px}.footer-links a{font-size:13px}.footer-description{font-size:13px}}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:19px;margin-top:20px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:12px;color:var(--muted);font-weight:700}.field textarea{min-height:75px}.full{grid-column:1/-1}.adminrow{padding:12px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center}.small{font-size:12px;color:var(--muted)}.hidden{display:none!important}.loginbox{max-width:440px;margin:24px auto}.loginbox input{margin:7px 0 12px}.msg{font-size:13px;color:#c8d6ff;white-space:pre-wrap}.danger{background:#542735;color:#ffdce1}.detail-modal{position:fixed;inset:0;z-index:99;background:#020615d9;display:none;align-items:center;justify-content:center;padding:18px}.detail-modal.show{display:flex}.detail-box{width:min(100%,480px);background:#121a34;border:1px solid #3b4d78;border-radius:18px;padding:20px;box-shadow:0 20px 70px #000b}.detail-box h3{margin:0 0 12px}.detail-box p{white-space:pre-wrap;color:#c4cee8}.detail-box .actions{justify-content:flex-end}.notice{margin-top:14px;padding:12px;border-radius:12px;background:#342b18;color:#f6d99b;font-size:12px}
+@media(max-width:760px){.quicklinks{gap:9px;margin-top:16px}.quick-card{min-height:68px;padding:12px;border-radius:17px}.quick-card.hot{min-height:76px}.quick-card .qicon{width:42px;height:42px;font-size:22px}.quick-card .qtitle{font-size:14px}.wrap{padding:0 15px}.top{height:67px}.brand{font-size:17px}.brandmark{width:39px;height:39px}.nav{display:none;position:absolute;top:60px;right:15px;z-index:10;background:#111831;border:1px solid var(--line);padding:8px;border-radius:14px;box-shadow:0 14px 35px #0009}.nav.open{display:flex;flex-direction:column;align-items:stretch}.nav button{width:100%;text-align:left}.menu{display:block}.hero{margin:15px 0 29px;padding:0;border-radius:20px}.hero-main{grid-template-columns:1fr;gap:18px}.hero h1{font-size:34px;letter-spacing:-1.2px}.hero p{font-size:13px}.hero-art img{aspect-ratio:auto}.stockstrip{margin:0 15px;padding:13px 0 15px}.stockstrip{margin-top:17px}.section-head h2{font-size:21px}.filterrow{grid-template-columns:1fr 1fr}.filterrow .search{grid-column:1/-1}.filterrow button{width:100%}.filterbottom{align-items:flex-start;flex-direction:column}.grid{grid-template-columns:1fr 1fr;gap:10px}.cover{height:auto;min-height:0}.cardbody{padding:11px}.card h3{font-size:14px}.desc{font-size:10px;min-height:42px}.price{font-size:14px}.detail{padding:7px 9px}.cta{align-items:flex-start;flex-direction:column;padding:18px}.footrow{align-items:flex-start;flex-direction:column}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.adminrow{align-items:flex-start;flex-direction:column}}
+@media(max-width:390px){.grid{grid-template-columns:1fr}.cover{height:auto}.hero h1{font-size:30px}.filterrow{grid-template-columns:1fr}.filterrow .search{grid-column:auto}}
+
+/* Bukti transaksi RadenMarket — kartu ringkas + halaman detail neon navy */
+.proof-section{margin:30px 0 28px}
+.proof-heading{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:14px}
+.proof-heading h2{font-size:24px;letter-spacing:-.7px;margin:0}
+.proof-heading p{color:var(--muted);font-size:11px;margin:3px 0 0}
+.proof-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.proof-card{min-width:0;min-height:142px;display:grid;grid-template-columns:minmax(105px,38%) minmax(0,1fr);overflow:hidden;border:1px solid #1765d8;border-radius:15px;background:linear-gradient(145deg,#101e43,#071329 70%,#0b1b3b);box-shadow:0 8px 24px #00143d55}
+.proof-photo{width:100%;height:100%;min-height:142px;max-height:170px;display:block;object-fit:cover;object-position:center;background:#071329;cursor:zoom-in}
+.proof-content{min-width:0;padding:12px;display:flex;flex-direction:column;justify-content:center;gap:5px}
+.proof-top{display:flex;align-items:center;justify-content:flex-start;gap:8px}
+.proof-status{display:inline-flex;align-items:center;gap:5px;color:#8de8c1;background:#064c3a;padding:4px 8px;border-radius:20px;font-size:9px;font-weight:850;white-space:nowrap}
+.proof-content h3{font-size:14px;line-height:1.25;margin:3px 0 0;overflow-wrap:anywhere}
+.proof-meta{display:flex;flex-direction:column;align-items:flex-start;gap:3px;margin-top:4px;padding-top:7px;border-top:1px solid #1a4c91}
+.proof-price{font-size:15px;font-weight:900;line-height:1.2}
+.proof-date{font-size:10px;color:#a9c5f5;line-height:1.3}
+.proof-note{font-size:10px;color:#a5bce0;line-height:1.35;white-space:normal;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:1px}
+.proof-open{display:inline-flex;align-items:center;justify-content:center;gap:6px;align-self:flex-start;margin-top:7px;padding:7px 10px;border:1px solid #087fff;border-radius:9px;background:linear-gradient(110deg,#073b91,#075bd5);color:#fff;font-size:10px;font-weight:850;box-shadow:0 0 15px #087fff35}
+.proof-empty{grid-column:1/-1;padding:22px 16px;text-align:center;border:1px dashed #24518a;border-radius:16px;color:var(--muted);background:#0b1530}
+.proof-image-modal{position:fixed;inset:0;z-index:120;background:#020615ed;display:none;align-items:center;justify-content:center;padding:18px;cursor:zoom-out}
+.proof-image-modal.show{display:flex}
+.proof-image-modal img{max-width:min(100%,1200px);max-height:82vh;width:auto;height:auto;object-fit:contain;border-radius:8px;touch-action:pan-x pan-y pinch-zoom;transform:scale(var(--zoom,1));transform-origin:center;transition:transform .15s ease}.zoom-controls{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);display:flex;gap:9px;z-index:3}.zoom-controls button{min-width:44px;padding:11px 14px;border:1px solid #7898d7;border-radius:11px;background:#14264b;color:#fff;font-size:17px;font-weight:800}
+/* Foto spesifikasi stok ditampilkan utuh; pelanggan dapat membuka tampilan zoom */
+.cover img:active{opacity:.96}
+.proof-image-modal{padding:52px 8px 76px;touch-action:pan-x pan-y pinch-zoom}.zoom-close-top{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:14px;z-index:5;width:44px;height:44px;display:grid;place-items:center;padding:0;border:1px solid #7898d7;border-radius:50%;background:#14264b;color:#fff;font-size:25px;font-weight:800;box-shadow:0 4px 16px #0008}.zoom-controls{bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+.proof-upload-hint{font-size:11px;color:var(--muted)}
+.stock-photo-preview{display:none;width:100%;max-width:220px;max-height:180px;object-fit:cover;border:1px solid #39496e;border-radius:12px;margin-top:10px}.stock-photo-preview.show{display:block}.file-picker{display:block;width:100%;padding:13px;background:#0a1022;border:1px dashed #52658e;border-radius:12px;color:#dce6ff}.file-picker::file-selector-button{margin-right:12px;padding:9px 13px;border:0;border-radius:9px;background:#26375f;color:#fff;font-weight:750}
+.proof-admin-thumb{width:62px;height:48px;object-fit:cover;border-radius:8px;border:1px solid var(--line);background:#202c4b}
+/* Halaman transaksi selesai dibuka sendiri, bukan ditumpuk di bawah katalog */
+#proofDetailPage{margin:22px auto 34px;max-width:1000px}
+.proof-detail-shell{position:relative;overflow:hidden;padding:clamp(20px,4vw,42px);border:1px solid #087fff;border-radius:24px;background:radial-gradient(ellipse at 50% 0,#0b2d68 0,#07152f 42%,#050d20 100%);box-shadow:0 0 35px #006dff24,inset 0 0 35px #006dff0b}
+.proof-detail-shell:before,.proof-detail-shell:after{content:"";position:absolute;pointer-events:none;width:45%;height:1px;background:linear-gradient(90deg,transparent,#008cff,transparent);transform:rotate(-42deg);opacity:.65}
+.proof-detail-shell:before{left:-12%;top:28%}.proof-detail-shell:after{right:-12%;bottom:18%}
+.proof-detail-brand{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.proof-detail-brand img{width:66px;height:66px;object-fit:contain;filter:drop-shadow(0 0 12px #168cff66)}
+.proof-detail-brand .brand-caption{font-size:11px;color:#9ebff5;letter-spacing:2px;font-weight:800}
+.proof-detail-success{position:relative;z-index:1;text-align:center;margin:0 auto 24px}
+.proof-check{width:112px;height:112px;margin:0 auto 12px;display:grid;place-items:center;border:7px solid #087fff;border-radius:50%;color:#72d5ff;font-size:65px;line-height:1;text-shadow:0 0 20px #00aaff;box-shadow:0 0 0 10px #087fff22,0 0 34px #008cff77,inset 0 0 20px #008cff35}
+.proof-detail-success h1{margin:12px 0 4px;font-size:clamp(25px,4vw,40px);line-height:1.15;letter-spacing:-1px}
+.proof-detail-success h1 span{color:#159dff}
+.proof-detail-success p{margin:0;color:#b4cef9;font-size:clamp(13px,2vw,18px)}
+.proof-detail-divider{height:1px;background:linear-gradient(90deg,transparent,#087fff,transparent);margin:22px 0}
+.proof-detail-card{position:relative;z-index:1;display:grid;grid-template-columns:minmax(150px,27%) minmax(0,1fr) auto;align-items:center;gap:clamp(14px,3vw,28px);padding:14px;border:1px solid #087fff;border-radius:22px;background:linear-gradient(130deg,#0c1d40,#050e21 70%,#0b1e42);box-shadow:0 0 22px #006dff25}
+.proof-detail-photo{width:100%;height:190px;object-fit:cover;object-position:center;border:2px solid #087fff;border-radius:17px;box-shadow:0 0 16px #007bff55;cursor:zoom-in;background:#101a31}
+.proof-detail-info{min-width:0}.proof-detail-info h2{font-size:clamp(19px,3vw,29px);margin:0 0 12px;overflow-wrap:anywhere}
+.proof-detail-line{display:flex;align-items:center;gap:11px;color:#b8d2ff;font-size:clamp(12px,2vw,17px);margin:7px 0}.proof-detail-line .ico{width:22px;color:#38aaff;font-size:20px;text-align:center}
+.proof-detail-price{color:#fff;font-weight:850}
+.proof-detail-badge{display:inline-flex;align-items:center;gap:8px;margin-top:8px;padding:9px 16px;border-radius:30px;background:linear-gradient(100deg,#006b49,#004d3c);color:#9effd7;font-weight:850;box-shadow:0 0 16px #00c98725}
+.proof-expand{width:72px;height:72px;display:grid;place-items:center;border:1px solid #087fff;border-radius:17px;background:#071b3b;color:#b9ddff;font-size:35px;box-shadow:0 0 18px #087fff35}
+.proof-back{position:relative;z-index:1;width:100%;margin-top:28px;padding:17px;border:1px solid #078cff;border-radius:16px;background:linear-gradient(100deg,#062c70,#0757c5 55%,#073277);color:#fff;font-size:17px;font-weight:900;box-shadow:0 0 22px #007bff35}
+@media(max-width:760px){.proof-grid{grid-template-columns:1fr;gap:10px}.proof-card{min-height:128px;grid-template-columns:38% minmax(0,1fr)}.proof-photo{min-height:128px;max-height:145px}.proof-content{padding:10px 12px}.proof-heading h2{font-size:21px}.proof-detail-shell{padding:18px 14px;border-radius:19px}.proof-detail-brand img{width:54px;height:54px}.proof-check{width:88px;height:88px;font-size:51px}.proof-detail-card{grid-template-columns:minmax(100px,34%) minmax(0,1fr);gap:12px;padding:10px}.proof-detail-photo{height:150px}.proof-expand{grid-column:1/-1;width:100%;height:42px;font-size:24px}.proof-back{font-size:15px;padding:15px}}
+@media(max-width:390px){.proof-card{grid-template-columns:36% minmax(0,1fr);min-height:116px}.proof-photo{min-height:116px;max-height:130px}.proof-content{padding:9px}.proof-content h3{font-size:13px}.proof-price{font-size:14px}.proof-date{font-size:9px}.proof-detail-line{font-size:11px}.proof-detail-photo{height:125px}.proof-detail-badge{font-size:11px;padding:7px 10px}}
+
+
+/* Kartu katalog lebih ringkas; pratinjau foto tetap utuh dan Zoom tetap tersedia */
+.cover{height:190px;min-height:0;aspect-ratio:auto;padding:4px;background:#080f23}
+.cover img{width:100%;height:100%;max-height:100%;object-fit:contain;object-position:center}
+.cardbody{padding:11px}
+.card h3{font-size:14px;line-height:1.25;margin:7px 0 4px}
+.desc{font-size:10px;line-height:1.45;min-height:0;overflow-wrap:anywhere}
+.price{font-size:14px}
+@media(max-width:760px){.cover{height:155px}.cardbody{padding:9px}.card h3{font-size:13px}.desc{font-size:9px;line-height:1.4}.price{font-size:13px}.price-line{margin-top:9px;padding-top:9px}}
+@media(max-width:390px){.cover{height:145px}}
+/* Pilihan transaksi dari tombol Detail */
+.order-choice-modal{position:fixed;inset:0;z-index:130;display:none;align-items:center;justify-content:center;padding:18px;background:#020615df}
+.order-choice-modal.show{display:flex}
+.order-choice-box{position:relative;width:min(100%,420px);max-height:90vh;overflow:auto;padding:22px;border:1px solid #45639b;border-radius:20px;background:linear-gradient(145deg,#172344,#0b1228);box-shadow:0 22px 70px #000b}
+.order-choice-box h3{margin:0 34px 7px 0;font-size:21px;color:#f2f6ff}
+.order-choice-box p{margin:0 0 17px;color:#aebcdb;font-size:13px;line-height:1.5}
+.order-choice-product{padding:11px 13px;margin-bottom:16px;border:1px solid #293d69;border-radius:12px;background:#0a142c;color:#dce7ff;font-size:13px;line-height:1.55}
+.order-choice-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.order-choice-actions button{width:100%;padding:13px 15px;border:1px solid #4b6ba7;border-radius:12px;background:linear-gradient(110deg,#1b376b,#263f79);color:#fff;font-size:15px;font-weight:850;cursor:pointer}
+.order-choice-actions button:first-child,.order-choice-actions button:nth-child(2),.order-choice-actions button:nth-child(3){background:linear-gradient(110deg,#172b55,#294b88);border-color:#5477bd}
+.order-choice-actions button:first-child{grid-column:1/-1}
+.order-choice-actions button:hover{background:linear-gradient(110deg,#203d75,#3562ad);border-color:#83a5ff;box-shadow:0 0 18px #477cff55}
+.order-choice-actions button:focus-visible,.order-choice-close:focus-visible,.order-choice-cancel:focus-visible{outline:2px solid #9bb8ff;outline-offset:3px}
+.order-choice-close{position:absolute;top:12px;right:12px;width:36px;height:36px;border:1px solid #526b9a;border-radius:50%;background:#17284b;color:#fff;font-size:21px;cursor:pointer}
+.order-choice-cancel{margin-top:12px;width:100%;padding:10px;border:0;background:transparent;color:#aebcdb;font-weight:700;cursor:pointer}
+
+.unban-modal{position:fixed;inset:0;z-index:9999;background:rgba(3,8,22,.82);display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto}
+.unban-modal.hidden{display:none!important}.unban-dialog{position:relative;width:min(100%,480px);max-height:92vh;overflow:auto;background:linear-gradient(145deg,#111d3d,#0b1329);border:1px solid #315b91;border-radius:22px;padding:25px;color:#f4f7ff;box-shadow:0 20px 70px #0009}
+.unban-dialog h2{font-size:23px;margin:0 35px 8px 0}.unban-close{position:absolute;right:15px;top:12px;border:0;background:#263858;color:white;border-radius:10px;width:36px;height:36px;font-size:25px;cursor:pointer}
+.unban-label{display:block;font-weight:700;font-size:14px;margin:17px 0 7px}.unban-input{box-sizing:border-box;width:100%;padding:13px 14px;border:1px solid #38547e;border-radius:11px;background:#091329;color:#fff;font:inherit;min-height:48px}.unban-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}.unban-option{display:flex;align-items:center;gap:10px;border:1px solid #38547e;background:#101d3b;border-radius:12px;padding:13px;cursor:pointer}.unban-option input{accent-color:#78a8ff;width:18px;height:18px}.unban-option span{display:grid;gap:3px}.unban-option small{color:#a9caff}.unban-total{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:18px;padding:15px;background:#0a1832;border:1px solid #315b91;border-radius:12px}.unban-total strong{font-size:18px;color:#9fc5ff;text-align:right}.unban-warning{font-size:13px;line-height:1.6;color:#a9caff;margin:15px 0}.unban-submit{width:100%;border:0;margin-top:4px}.unban-submit:disabled{opacity:.45;cursor:not-allowed}
+@media(max-width:420px){.unban-dialog{padding:20px}.unban-dialog h2{font-size:20px}}
+
+
+/* ===== Fitur tambahan RadenMarket ===== */
+.announcement-wrap{margin:18px 0 0}.announcement-card{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border:1px solid #345b9a;border-radius:15px;background:linear-gradient(110deg,#14254b,#10182f);box-shadow:0 8px 24px #02061555}.announcement-icon{width:38px;height:38px;flex:0 0 38px;border-radius:12px;display:grid;place-items:center;background:#203c70;color:#a9c7ff;font-size:19px}.announcement-card h3{margin:0 0 3px;font-size:14px}.announcement-card p{margin:0;color:#b8c7e8;font-size:12px;white-space:pre-wrap}.announcement-card .announcement-date{display:block;margin-top:5px;color:#8196c4;font-size:10px}
+.favorite-btn{position:absolute;top:9px;right:9px;z-index:3;width:37px;height:37px;padding:0;border-radius:12px;border:1px solid #526b9b;background:#09152de8;color:#dce7ff;font-size:19px;display:grid;place-items:center;box-shadow:0 4px 14px #0007}.favorite-btn.active{color:#ff8fa9;border-color:#a74c70;background:#351b31}.favorite-nav{position:relative}.favorite-count{display:inline-grid;place-items:center;min-width:17px;height:17px;padding:0 4px;margin-left:4px;border-radius:20px;background:#31599a;color:#fff;font-size:10px}
+.floating-cs{position:fixed;right:18px;bottom:20px;z-index:90;width:62px;height:62px;padding:0;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#c5d8ff,#6d9cff 65%,#315fbd);color:#07132d;border:2px solid #d6e4ff;box-shadow:0 0 0 5px #719cff20,0 0 26px #478bff99,0 10px 28px #0008;font-size:27px;animation:csPulse 2.8s ease-in-out infinite}.floating-cs:after{content:'CS';position:absolute;right:-3px;top:-4px;border:2px solid #0b1227;border-radius:9px;padding:1px 5px;background:#1c376a;color:#dce9ff;font-size:9px;font-weight:900}.floating-cs:hover{transform:translateY(-3px)}@keyframes csPulse{50%{box-shadow:0 0 0 9px #719cff10,0 0 34px #478bffbb,0 10px 28px #0008}}
+.feature-modal{position:fixed;inset:0;z-index:100;background:#020616d9;display:none;align-items:center;justify-content:center;padding:16px}.feature-modal.show{display:flex}.feature-box{position:relative;width:min(100%,480px);max-height:90vh;overflow:auto;padding:23px;border-radius:20px;border:1px solid #345b91;background:linear-gradient(145deg,#131f40,#0a1125);box-shadow:0 24px 80px #000b}.feature-box h2{margin:0 35px 7px 0;font-size:21px}.feature-box>p{color:#aebcda;font-size:12px;margin:0 0 17px}.feature-close{position:absolute;right:13px;top:13px;width:35px;height:35px;padding:0;background:#263858;color:#fff}.feature-field{display:grid;gap:6px;margin:12px 0}.feature-field label{font-size:12px;color:#c6d4f2;font-weight:750}.feature-field input,.feature-field select{width:100%;padding:12px;border:1px solid #30436b;border-radius:11px;background:#080f21;color:#fff;outline:none}.feature-field input:focus{border-color:#82aaff}.feature-result{margin-top:13px;padding:13px;border:1px solid #2d4776;border-radius:12px;background:#0c1730;color:#dce8ff;font-size:12px}.feature-result strong{color:#a9c8ff}.feature-result .status-pill{display:inline-block;padding:4px 9px;border-radius:20px;background:#203c70;color:#d9e8ff;font-weight:800}.feature-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.feature-actions button{flex:1}.admin-feature-panel{margin-top:16px}.admin-feature-panel h3{margin:0 0 12px}.admin-order-row,.admin-announcement-row{padding:12px 0;border-top:1px solid #ffffff17;display:flex;justify-content:space-between;align-items:center;gap:12px}.admin-order-row .small,.admin-announcement-row .small{margin-top:3px}.admin-order-row select{max-width:155px;padding:8px;border-radius:9px;background:#0a1022;border:1px solid #29375a;color:#fff}.favorite-empty{grid-column:1/-1;padding:20px;border:1px dashed #344263;border-radius:14px;color:#aab7d3;text-align:center}
+@media(max-width:680px){.floating-cs{right:14px;bottom:16px;width:56px;height:56px}.announcement-card{padding:12px}.admin-order-row{align-items:flex-start;flex-direction:column}.admin-order-row select{max-width:none;width:100%}}
+
+
+/* Katalog rental akun */
+.rental-section{margin:28px 0 38px;padding:18px;border:1px solid #29477f;border-radius:20px;background:linear-gradient(145deg,#101a36,#0b1126)}
+.rental-banner{padding:16px;border-radius:15px;background:linear-gradient(110deg,#202c61,#342052);border:1px solid #5367b4;margin:12px 0 18px;color:#e9efff}
+.rental-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.rental-card{overflow:hidden;border:1px solid #2b477e;border-radius:15px;background:#101a32}.rental-card img{width:100%;height:155px;object-fit:cover;background:#080e20}.rental-card-body{padding:12px}.rental-card h3{font-size:15px;margin:0 0 5px}.rental-spec{font-size:12px;color:#b8c6e6;white-space:pre-wrap;min-height:42px}.rental-prices{font-size:12px;color:#9fc1ff;margin:10px 0}.rental-card button{width:100%}.rental-admin-item{padding:11px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center}
+@media(max-width:760px){.rental-section{padding:13px}.rental-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.rental-card img{height:115px}.rental-card-body{padding:9px}.rental-card h3{font-size:13px}}
+/* Detail rental account */
+#rentalDetailPage{max-width:1000px;margin:20px auto 38px;padding:0 2px}
+.rental-detail-shell{padding:clamp(14px,3vw,28px);border:1px solid #294b7d;border-radius:22px;background:linear-gradient(145deg,#0d1a35,#091126);box-shadow:0 15px 40px #0005}
+.rental-breadcrumb{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:3px 0 20px;color:#9fb2d5;font-size:13px}.rental-breadcrumb button{border:0;background:none;color:#9fc2ff;padding:0;font:inherit;cursor:pointer}.rental-breadcrumb b{color:#e8efff}
+.rental-detail-hero{padding:12px;border:1px solid #294c7b;border-radius:18px;background:#0a1429}.rental-detail-hero img{display:block;width:100%;max-height:620px;object-fit:contain;border-radius:12px;background:#070e1d}.rental-detail-noimage{min-height:220px;display:grid;place-items:center;color:#9fb5df;font-size:48px}
+.rental-detail-info{margin-top:18px;padding:clamp(16px,3vw,26px);border:1px solid #294c7b;border-radius:18px;background:linear-gradient(145deg,#10213b,#0b172d)}.rental-detail-kicker{display:flex;gap:10px;align-items:center;flex-wrap:wrap;color:#b5caff;font-weight:800;font-size:13px}.rental-ready{padding:7px 12px;border:1px solid #315c8c;border-radius:30px;color:#8fdcff;background:#0b2940}.rental-detail-info h1{font-size:clamp(25px,5vw,38px);margin:14px 0 8px}.rental-detail-specs{color:#b6c7e5;white-space:pre-wrap;line-height:1.7;margin:8px 0 22px}.rental-package-title{font-size:19px;margin:24px 0 12px}.rental-package-list{display:grid;gap:11px}.rental-package{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px;border:1px solid #254d73;border-radius:16px;background:linear-gradient(110deg,#0b2037,#0d1a31)}.rental-package strong{display:block;font-size:18px}.rental-package-price{display:block;margin-top:4px;color:#78caff;font-size:19px;font-weight:850}.rental-package button{flex:0 0 auto;min-width:112px;padding:13px 18px;border:0;border-radius:12px;background:linear-gradient(110deg,#9abaff,#6e98ef);color:#07152e;font-weight:900;cursor:pointer}.rental-detail-note{margin-top:15px;color:#91a9d1;font-size:12px;line-height:1.6}
+@media(max-width:520px){#rentalDetailPage{margin:12px auto 28px}.rental-package{padding:12px}.rental-package strong{font-size:16px}.rental-package-price{font-size:17px}.rental-package button{min-width:94px;padding:12px 10px}}
+</style>
+</head>
+<body><div class="wrap">
+<header class="top">
+ <a class="brand" href="#" aria-label="RadenMarket beranda"><span class="brandmark"><img src="assets/logo.png" alt="Logo RDN"></span><span>RadenMarket<small>GAME ACCOUNT MARKET</small></span></a>
+ <nav class="nav" id="navMenu"><button id="homeBtn">Beranda</button><button onclick="document.getElementById('catalog').scrollIntoView({behavior:'smooth'})">Katalog</button><button id="trackOrderNav">Lacak Pesanan</button><button id="favoriteNav" class="favorite-nav">Favorit <span id="favoriteCount" class="favorite-count">0</span></button><a class="navlink" href="https://whatsapp.com/channel/0029VbBg39sDp2QEw68JOo0j" target="_blank" rel="noopener noreferrer">Saluran WA ↗</a><a class="navlink" href="https://radenmarket.my.id" target="_blank" rel="noopener noreferrer">Top Up Game ↗</a><a class="navlink" href="https://wa.me/6285813987501" target="_blank" rel="noopener noreferrer">Nomor Resmi ↗</a><button class="admin" id="adminBtn">Admin</button></nav>
+ <button class="menu" id="menuBtn" aria-label="Buka menu">☰</button>
+</header>
+<main id="publicPage">
+ <section class="quicklinks" aria-label="Menu pintasan RadenMarket">
+  <a class="quick-card hot" href="#rentalCatalog"><span class="qleft"><span class="qicon">🎮</span><span><span class="qtag">RENTAL</span><span class="qtitle">Rental Akun</span></span></span><span class="qarrow">↗</span></a>
+  <a class="quick-card" href="https://whatsapp.com/channel/0029VbBg39sDp2QEw68JOo0j" target="_blank" rel="noopener noreferrer"><span class="qleft"><span class="qicon qicon-logo"><img src="assets/logo.png" alt="Logo RDN"></span><span class="qtitle">Saluran WA</span></span><span class="qarrow">↗</span></a>
+  <a class="quick-card" href="https://wa.me/6285813987501" target="_blank" rel="noopener noreferrer"><span class="qleft"><span class="qicon qicon-logo"><img src="assets/logo.png" alt="Logo RDN"></span><span class="qtitle">Nomor resmi</span></span><span class="qarrow">↗</span></a>
+ </section>
+ <section id="announcementArea" class="announcement-wrap hidden" aria-live="polite"></section>
+ <section class="hero">
+  <div class="hero-art"><img src="assets/radenmarket-banner-new.png" alt="Banner RadenMarket RDN — Jual Beli & Top Up Game"></div>
+  <div class="stockstrip"><div><strong id="stockCount">0</strong><span>Akun tersedia</span></div><div style="text-align:right"><span>Belanja mudah · Aman · Terpercaya</span><br><b style="font-size:12px;color:#dbe5ff">RadenMarket</b></div></div>
+ </section>
+ <section class="rental-section" id="rentalCatalog">
+  <div class="section-head"><div><h2>Rental Akun Game</h2><p>Pilih akun yang siap kamu rental.</p></div><span class="small" id="rentalCount">Memuat...</span></div>
+  <div class="rental-banner"><b>🎮 RENTAL AKUN RADENMARKET</b><div class="small" style="color:#e0e8ff;margin-top:5px">Pilih game, cek spesifikasi dan harga durasi rental. Hubungi admin untuk konfirmasi ketersediaan.</div></div>
+  <div class="rental-grid" id="rentalGrid"><div class="empty">Memuat katalog rental...</div></div>
+ </section>
+ <section class="catalog" id="catalog">
+  <div class="section-head"><div><h2>Jelajahi katalog.</h2><p>Pilih akun yang paling cocok buatmu.</p></div><span class="small" id="resultCount">Memuat stok...</span></div>
+  <div class="filters">
+   <div class="filterrow"><input id="search" class="search" placeholder="Cari game, rank, hero, skin, atau server..."><select id="statusFilter"><option value="all">Semua status</option><option value="available">Hanya tersedia</option><option value="sold">Terjual</option></select><select id="sortFilter"><option value="new">Paling baru</option><option value="low">Harga terendah</option><option value="high">Harga tertinggi</option></select><button id="searchBtn" class="btn">Cari akun ↗</button></div>
+   <div class="filterbottom"><div class="chips" id="chips"><button class="chip active" data-filter="all">Semua game <span id="allCount">0</span></button><span id="categoryChips" style="display:contents"></span></div><button class="reset" id="resetBtn">Reset pencarian ×</button></div>
+  </div>
+  <section id="productGrid" class="grid"><div class="empty">Menghubungkan ke database...</div></section>
+ </section>
+
+ <section class="proof-section" id="bukti-transaksi">
+  <div class="proof-heading"><div><h2>Bukti Transaksi Selesai.</h2><p>Transaksi yang telah diselesaikan bersama RadenMarket.</p></div><span class="small" id="proofCount">Memuat...</span></div>
+  <div id="proofGrid" class="proof-grid"><div class="proof-empty">Memuat bukti transaksi...</div></div>
+ </section>
+
+ <section class="panel service-panel" id="jasa-unban" style="margin:28px 0;background:linear-gradient(145deg,#101a37,#0c1329);border-color:#24558a">
+  <div class="section-head"><div><h2>Jasa Unban & Pemulihan WhatsApp</h2><p>Bantuan peninjauan resmi dan konsultasi pemulihan akun.</p></div><span class="tag">Layanan</span></div>
+  <h3 style="font-size:20px;margin:0 0 8px">Akun WhatsApp terkena banned?</h3>
+  <p class="small">Kami menyediakan bantuan memahami proses peninjauan resmi WhatsApp dan konsultasi langkah pemulihan. Harga dapat ditanyakan langsung kepada admin.</p>
+  <p class="small" style="color:#9fd3ff">Pemulihan tidak dijamin. Jangan pernah memberikan kode OTP, PIN, atau kata sandi kepada siapa pun.</p>
+     <button class="btn" id="openUnbanForm" type="button" style="display:inline-block;padding:11px 16px;border-radius:12px;font-weight:800;color:#101a39;cursor:pointer">Hubungi Admin WhatsApp ↗</button>
+    <button class="secondary" id="openUnbanTrack" type="button" style="margin-top:12px">Lacak Status Unban</button>
+  </section>
+  <div class="unban-modal hidden" id="unbanTrackModal" role="dialog" aria-modal="true" aria-labelledby="unbanTrackTitle">
+   <div class="unban-dialog">
+    <button type="button" class="unban-close" id="closeUnbanTrack" aria-label="Tutup">×</button>
+    <h2 id="unbanTrackTitle">Lacak Status Unban</h2>
+    <p class="small">Masukkan kode Unban, nama pembeli, dan nomor WhatsApp yang didaftarkan.</p>
+    <form id="unbanTrackForm">
+     <label class="unban-label" for="unbanTrackCode">Kode Unban</label>
+     <input id="unbanTrackCode" class="unban-input" required placeholder="Contoh: UNB261115A123">
+     <label class="unban-label" for="unbanTrackName">Nama pembeli</label>
+     <input id="unbanTrackName" class="unban-input" required maxlength="80" placeholder="Nama saat mengajukan">
+     <label class="unban-label" for="unbanTrackPhone">Nomor WhatsApp</label>
+     <input id="unbanTrackPhone" class="unban-input" type="tel" inputmode="tel" required placeholder="Nomor yang diajukan">
+     <button class="btn" type="submit">Cek Status Unban</button>
+    </form>
+    <div id="unbanTrackResult" class="small" style="margin-top:14px"></div>
+   </div>
+  </div>
+  <div class="unban-modal hidden" id="unbanModal" role="dialog" aria-modal="true" aria-labelledby="unbanTitle">
+   <div class="unban-dialog">
+    <button type="button" class="unban-close" id="closeUnbanForm" aria-label="Tutup">×</button>
+    <h2 id="unbanTitle">Formulir Jasa Unban WhatsApp</h2>
+    <p class="small">Isi data berikut agar admin dapat memeriksa permintaanmu.</p>
+    <form id="unbanForm">
+     <label class="unban-label" for="unbanCustomerName">Nama pembeli</label>
+     <input id="unbanCustomerName" class="unban-input" type="text" placeholder="Masukkan nama lengkap" required maxlength="80" autocomplete="name">
+     <label class="unban-label" for="unbanPhone">Nomor WhatsApp yang terblokir</label>
+     <input id="unbanPhone" class="unban-input" type="tel" inputmode="tel" placeholder="Contoh: 6281234567890" required maxlength="20" autocomplete="tel">
+     <label class="unban-label" for="unbanDate">Tanggal kejadian terblokir</label>
+     <input id="unbanDate" class="unban-input" type="date" required>
+     <span class="unban-label">Opsi terblokir</span>
+     <div class="unban-options">
+      <label class="unban-option"><input type="radio" name="unbanType" value="Permanen" required><span><strong>Permanen</strong><small>Rp100.000</small></span></label>
+      <label class="unban-option"><input type="radio" name="unbanType" value="Tinjau" required><span><strong>Tinjau</strong><small>Rp50.000</small></span></label>
+     </div>
+     <div class="unban-total"><span>Nominal layanan</span><strong id="unbanPrice">Pilih opsi terlebih dahulu</strong></div>
+     <p class="unban-warning">Pemulihan tidak dijamin. Jangan pernah mengirimkan OTP, PIN, atau kata sandi WhatsApp.</p>
+     <button class="btn unban-submit" type="submit" id="unbanSubmit" disabled>Hubungi Admin Segera ↗</button>
+    </form>
+   </div>
+  </div>
+  <section class="cta" id="howto"><div><h2>Ketemu akun yang cocok?</h2><p>Buka detail akun dan diskusikan transaksi langsung dengan admin.</p></div><button class="secondary" onclick="alert('Silakan hubungi admin melalui kanal resmi RadenMarket untuk konfirmasi stok dan pembayaran.')">Pelajari cara transaksi ↗</button></section>
+</main>
+<main id="proofDetailPage" class="hidden" aria-live="polite">
+ <section class="proof-detail-shell">
+  <div class="proof-detail-brand"><img src="assets/logo.png" alt="Logo RDM RadenMarket"><span class="brand-caption">RADENMARKET</span></div>
+  <div id="proofDetailContent"></div>
+ </section>
+</main>
+<main id="rentalDetailPage" class="hidden" aria-live="polite">
+ <section class="rental-detail-shell">
+  <div class="rental-breadcrumb"><button type="button" id="rentalBackTop">Beranda</button><span>/</span><span>Rental</span><span>/</span><b id="rentalCrumbName">Detail akun</b></div>
+  <div id="rentalDetailContent"></div>
+ </section>
+</main>
+<main id="adminPage" class="hidden">
+ <section id="loginSection" class="panel loginbox"><h2>Login Admin</h2><p class="small">Masuk menggunakan email dan password admin RadenMarket.</p><input id="emailInput" type="email" placeholder="Email admin" autocomplete="username"><input id="passwordInput" type="password" placeholder="Password admin" autocomplete="current-password"><button id="loginBtn" class="btn" style="width:100%">Masuk</button><button id="signupBtn" class="secondary" type="button" style="width:100%;margin-top:10px">Buat Akun Admin</button><p id="loginMsg" class="msg"></p><button id="forgotBtn" class="reset" type="button">Lupa password?</button><section id="newPasswordSection" class="hidden"><h3>Ubah Password Admin</h3><input id="newPasswordInput" type="password" placeholder="Password baru" autocomplete="new-password"><input id="confirmPasswordInput" type="password" placeholder="Ulangi password baru" autocomplete="new-password"><button id="updatePasswordBtn" class="btn" style="width:100%">Simpan password baru</button><p id="passwordMsg" class="msg"></p></section></section>
+ <section id="dashboard" class="hidden"><div class="panel"><div style="display:flex;justify-content:space-between;gap:10px;align-items:center"><h2 id="formTitle">Tambah stok akun</h2><button id="logoutBtn" class="ghost">Keluar</button></div><div class="formgrid"><div class="field"><label>Nama / kode akun</label><input id="itemName" placeholder="FF Sultan #01"></div><div class="field"><label>Kategori akun</label><input id="itemCategory" list="categoryOptions" placeholder="Contoh: FREE FIRE"><datalist id="categoryOptions"><option value="AKUN TITIPAN"><option value="EFOOTBALL"><option value="FREE FIRE"><option value="PENZ"><option value="PUBG"><option value="Rey MLBB"><option value="STOK ML ZUTO 1JT KEATAS"><option value="STOK ML ZUTO 1JT KEBAWAH"><option value="VALORANT"></datalist></div><div class="field"><label>Harga (Rp)</label><input id="itemPrice" type="number" min="0" placeholder="50000"></div><div class="field"><label>Status</label><select id="itemStatus"><option value="available">Tersedia</option><option value="sold">Terjual</option></select></div><div class="field"><label>Upload foto (opsional)</label><input id="itemImageFile" class="file-picker" type="file" accept="image/jpeg,image/png,image/webp"><img id="itemImagePreview" class="stock-photo-preview" alt="Pratinjau foto akun"><p class="proof-upload-hint">Pilih foto langsung dari galeri HP (JPG, PNG, WebP · maks. 8 MB).</p></div><div class="field full"><label>Keterangan akun</label><textarea id="itemDesc" placeholder="Info umum akun. Jangan masukkan password atau data login."></textarea></div></div><div class="actions"><button id="saveBtn" class="btn">Simpan stok</button><button id="cancelEdit" class="secondary hidden">Batal edit</button></div><p id="formMsg" class="msg"></p></div><div class="panel"><h2>Kelola stok</h2><div id="adminList"></div></div></section>
+
+<div class="panel admin-feature-panel hidden" id="rentalAdminPanel">
+ <h2>Kelola Katalog Rental</h2><p class="small">Tambah dan ubah nama game, foto, spesifikasi, harga, serta durasi rental. Perubahan tampil di katalog pelanggan.</p>
+ <div class="formgrid">
+  <div class="field"><label>Nama game</label><input id="rGame" placeholder="FREE FIRE"></div>
+  <div class="field"><label>Nama / kode akun</label><input id="rName" placeholder="FF Sultan #01"></div>
+  <div class="field"><label>Harga 1 jam (Rp)</label><input id="rPrice1" type="number" min="0" placeholder="5000"></div>
+  <div class="field"><label>Harga 3 jam (Rp)</label><input id="rPrice3" type="number" min="0" placeholder="12000"></div>
+  <div class="field"><label>Harga 6 jam (Rp)</label><input id="rPrice6" type="number" min="0" placeholder="20000"></div>
+  <div class="field"><label>Harga 12 jam (Rp)</label><input id="rPrice12" type="number" min="0" placeholder="35000"></div>
+  <div class="field"><label>Harga 24 jam (Rp)</label><input id="rPrice24" type="number" min="0" placeholder="50000"></div>
+  <div class="field"><label>Status</label><select id="rStatus"><option value="available">Tersedia</option><option value="unavailable">Tidak tersedia</option></select></div>
+  <div class="field"><label>Foto akun</label><input id="rImage" type="file" accept="image/jpeg,image/png,image/webp"><img id="rPreview" class="stock-photo-preview" alt="Pratinjau foto rental"></div>
+  <div class="field full"><label>Spesifikasi akun</label><textarea id="rSpecs" placeholder="Level, rank, skin, koleksi, dan detail akun..."></textarea></div>
+ </div>
+ <div class="actions"><button id="rSave" class="btn" type="button">Simpan akun rental</button><button id="rCancel" class="secondary hidden" type="button">Batal edit</button></div><p class="msg" id="rMsg"></p><div id="rAdminList"></div>
+</div>
+
+<div class="panel hidden" id="proofAdminPanel">
+ <h2>Kelola Bukti Transaksi</h2>
+ <p class="small">Tambahkan foto bukti transaksi yang sudah selesai. Bukti akan tampil di halaman utama.</p>
+ <div class="formgrid">
+  <div class="field"><label>Nama produk / transaksi</label><input id="proofProduct" placeholder="Contoh: Akun eFootball #03"></div>
+  <div class="field"><label>Harga transaksi (Rp)</label><input id="proofPrice" type="number" min="0" placeholder="100000"></div>
+  <div class="field"><label>Tanggal transaksi</label><input id="proofDate" type="date"></div>
+  <div class="field"><label>Foto bukti transaksi</label><input id="proofImage" type="file" accept="image/*"></div>
+  <div class="field full"><label>Catatan (opsional)</label><textarea id="proofNote" placeholder="Contoh: Pesanan selesai dan akun sudah diterima pelanggan. Hindari menulis data pribadi pelanggan."></textarea></div>
+ </div>
+ <p class="proof-upload-hint">Format gambar JPG, PNG, atau WebP. Samarkan nomor WhatsApp, nama lengkap, dan informasi pribadi pelanggan sebelum mengunggah.</p>
+ <div class="actions"><button id="proofSaveBtn" class="btn" type="button">Tambah bukti transaksi</button><button id="proofCancelBtn" class="secondary hidden" type="button">Batal edit</button></div>
+ <p id="proofFormMsg" class="msg"></p>
+ <div style="margin-top:18px"><h3>Daftar bukti transaksi</h3><div id="proofAdminList"></div></div>
+</div>
+
+ <div class="panel admin-feature-panel hidden" id="ordersAdminPanel"><h2>Kelola Pesanan</h2><p class="small">Pesanan pelanggan yang menunggu konfirmasi atau sedang diproses.</p><div id="adminOrdersList"><p class="small">Memuat pesanan...</p></div></div>
+ <div class="panel admin-feature-panel hidden" id="unbanAdminPanel"><h2>Kelola Permintaan Unban</h2><p class="small">Perbarui status pemulihan WhatsApp pelanggan.</p><div id="adminUnbanList"><p class="small">Memuat permintaan Unban...</p></div></div>
+ <div class="panel admin-feature-panel hidden" id="announcementAdminPanel"><h2>Kelola Pengumuman</h2><div class="formgrid"><div class="field"><label>Judul pengumuman</label><input id="announcementTitle" maxlength="90" placeholder="Contoh: Stok baru tersedia"></div><div class="field full"><label>Isi pengumuman</label><textarea id="announcementBody" maxlength="500" placeholder="Tulis informasi untuk pelanggan..."></textarea></div><div class="field"><label>Status</label><select id="announcementActive"><option value="true">Aktif</option><option value="false">Nonaktif</option></select></div></div><div class="actions"><button class="btn" id="announcementSaveBtn" type="button">Terbitkan pengumuman</button><button class="secondary hidden" id="announcementCancelBtn" type="button">Batal edit</button></div><p id="announcementMsg" class="msg"></p><div id="adminAnnouncementsList"></div></div>
+ <div class="notice">Pengelolaan stok memerlukan akun admin Supabase dan kebijakan RLS admin. Ikuti file setup_admin.sql sebelum memakai fitur tambah/edit/hapus.</div>
+</main>
+
+<footer aria-label="Informasi RadenMarket">
+ <div class="wrap footer-grid">
+  <div class="footer-brand">
+   <img class="footer-logo" src="assets/logo.png" alt="Logo RadenMarket" loading="lazy">
+   <p class="footer-description">Tempat jual beli akun game dengan proses transaksi langsung bersama admin RadenMarket.</p>
+   <a class="footer-wa" href="https://wa.me/6285813987501" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">●</span> WhatsApp Admin ↗</a>
+  </div>
+  <div class="footer-col">
+   <h3>Menu</h3>
+   <nav class="footer-links" aria-label="Menu footer">
+    <a href="#catalog">Produk</a>
+    <a href="#howto">Cara Transaksi</a>
+    <a href="#bukti-transaksi">Bukti Transaksi</a>
+    <a href="#jasa-unban">Tentang Layanan</a>
+   </nav>
+  </div>
+  <div class="footer-col">
+   <h3>Layanan</h3>
+   <nav class="footer-links" aria-label="Layanan footer">
+    <a href="#catalog">Stok Akun Game</a>
+    <a href="https://radenmarket.my.id" target="_blank" rel="noopener noreferrer">Top Up Game ↗</a>
+    <a href="https://whatsapp.com/channel/0029VbBg39sDp2QEw68JOo0j" target="_blank" rel="noopener noreferrer">Saluran WhatsApp ↗</a>
+    <a href="https://www.instagram.com/radenmarketid/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+   </nav>
+  </div>
+  <div class="footer-trust">
+   <h3>Sinyal Trust</h3>
+   <div class="footer-trust-list">
+    <div class="footer-trust-item"><span class="footer-trust-icon" aria-hidden="true">◇</span><span>Transaksi dikonfirmasi admin</span></div>
+    <div class="footer-trust-item"><span class="footer-trust-icon" aria-hidden="true">✓</span><span>Stok diperiksa sebelum pembayaran</span></div>
+    <div class="footer-trust-item"><span class="footer-trust-icon" aria-hidden="true">⌁</span><span>Bantuan melalui kontak resmi</span></div>
+   </div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> RadenMarket. Transaksi dilanjutkan melalui admin.</span><span>Belanja mudah · Aman · Terpercaya</span></div>
+ </div>
+</footer>
+</div>
+
+<div id="orderChoiceModal" class="order-choice-modal" role="dialog" aria-modal="true" aria-labelledby="orderChoiceTitle">
+ <section class="order-choice-box">
+  <button type="button" id="orderChoiceClose" class="order-choice-close" aria-label="Tutup">✕</button>
+  <h3 id="orderChoiceTitle">Pilih cara transaksi</h3>
+  <p>Pilih salah satu, WhatsApp admin akan terbuka dengan pesan otomatis.</p>
+  <div id="orderChoiceProduct" class="order-choice-product"></div><div class="feature-field"><label for="orderCustomerName">Nama pemesan</label><input id="orderCustomerName" maxlength="80" placeholder="Nama kamu"></div><div class="feature-field"><label for="orderCustomerPhone">Nomor WhatsApp aktif</label><input id="orderCustomerPhone" type="tel" inputmode="tel" maxlength="20" placeholder="628xxxxxxxxxx"></div><p class="small" id="orderCreateMsg">Pesanan akan dicatat dan menunggu konfirmasi admin. Belum ada pembayaran otomatis.</p>
+  <div class="order-choice-actions">
+   <button type="button" data-order-choice="BELI">BELI</button>
+   <button type="button" data-order-choice="NEGO">NEGO</button>
+   <button type="button" data-order-choice="CICIL">CICIL</button>
+  </div>
+  <button type="button" id="orderChoiceCancel" class="order-choice-cancel">Kembali</button>
+ </section>
+</div>
+
+<div id="proofImageModal" class="proof-image-modal" role="dialog" aria-label="Foto spesifikasi diperbesar" aria-modal="true">
+ <button type="button" id="zoomCloseBtn" class="zoom-close-top" aria-label="Tutup zoom">✕</button>
+ <img id="proofImageModalImg" alt="Foto spesifikasi akun">
+ <div class="zoom-controls"><button type="button" id="zoomOutBtn" aria-label="Perkecil">−</button><button type="button" id="zoomResetBtn">Reset</button><button type="button" id="zoomInBtn" aria-label="Perbesar">＋</button></div>
+</div>
+
+
+<div class="feature-modal" id="trackOrderModal" role="dialog" aria-modal="true" aria-labelledby="trackOrderTitle"><section class="feature-box"><button class="feature-close" type="button" data-close-feature="trackOrderModal" aria-label="Tutup">✕</button><h2 id="trackOrderTitle">Lacak Pesanan</h2><p>Masukkan kode pesanan dan nama pembeli yang digunakan saat membuat pesanan.</p><div class="feature-field"><label for="trackCode">Kode pesanan</label><input id="trackCode" placeholder="Contoh: RM20261115XXXXXX" autocomplete="off"></div><div class="feature-field"><label for="trackName">Nama pembeli</label><input id="trackName" type="text" maxlength="80" placeholder="Masukkan nama pembeli" autocomplete="name"></div><button class="btn" id="trackSubmit" type="button" style="width:100%">Cek status pesanan</button><div id="trackResult" aria-live="polite"></div></section></div>
+<div class="feature-modal" id="favoriteModal" role="dialog" aria-modal="true" aria-labelledby="favoriteTitle"><section class="feature-box"><button class="feature-close" type="button" data-close-feature="favoriteModal" aria-label="Tutup">✕</button><h2 id="favoriteTitle">Favorit Saya</h2><p>Akun yang kamu simpan di perangkat ini.</p><div id="favoriteList" class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr))"></div></section></div>
+<button class="floating-cs" id="floatingCsBtn" type="button" aria-label="Hubungi Customer Service RadenMarket" title="Customer Service">🎧</button>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL='https://zohhcndgfuvcugikqgwf.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY='sb_publishable_vgywxqEkFcMHXO4J5MRIIg_heYJcfQu';
+const db=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+const $=id=>document.getElementById(id);let items=[],editing=null,chipFilter='all';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const categoryOf=x=>String(x.category||'').trim()||inferCategory(x);
+function inferCategory(x){const t=(String(x.name||'')+' '+String(x.description||'')).toLowerCase();const rules=[['AKUN TITIPAN',['titipan']],['EFOOTBALL',['efootball','e-football']],['FREE FIRE',['free fire','freefire',' ff ']],['PENZ',['penz']],['PUBG',['pubg']],['Rey MLBB',['rey mlbb']],['STOK ML ZUTO 1JT KEATAS',['zuto 1jt keatas','zuto 1jt ke atas']],['STOK ML ZUTO 1JT KEBAWAH',['zuto 1jt kebawah','zuto 1jt ke bawah']],['VALORANT',['valorant']],['MOBILE LEGENDS',['mobile legends','mlbb']]];for(const [c,keys] of rules)if(keys.some(k=>t.includes(k)))return c;return 'LAINNYA'}
+const CS_WA='6285199274698';
+const money=n=>new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(Number(n)||0);
+function page(p){$('publicPage').classList.toggle('hidden',p!=='home');$('proofDetailPage').classList.add('hidden');$('rentalDetailPage').classList.add('hidden');$('adminPage').classList.toggle('hidden',p!=='admin');$('navMenu').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'})}
+function render(){
+ const q=$('search').value.toLowerCase().trim(),status=$('statusFilter').value,sort=$('sortFilter').value;
+ const available=items.filter(x=>x.status==='available');
+ $('stockCount').textContent=available.length;
+ $('allCount').textContent=available.length;
+ const cats=[...new Set(items.map(categoryOf))].sort((a,b)=>a.localeCompare(b,'id'));
+ $('categoryChips').innerHTML=cats.map(c=>{const n=available.filter(x=>categoryOf(x)===c).length;return `<button class="chip ${chipFilter===c?'active':''}" data-filter="${esc(c)}">${esc(c)} <span>${n}</span></button>`}).join('');
+ let list=items.filter(x=>(x.name+' '+(x.description||'')).toLowerCase().includes(q));
+ if(status!=='all')list=list.filter(x=>x.status===status);
+ if(chipFilter!=='all')list=list.filter(x=>categoryOf(x)===chipFilter);
+ if(sort==='low')list.sort((a,b)=>Number(a.price)-Number(b.price));
+ if(sort==='high')list.sort((a,b)=>Number(b.price)-Number(a.price));
+ $('resultCount').textContent=list.length+' akun ditemukan';
+ $('productGrid').innerHTML=list.length?list.map(x=>{const photo=resolveImageUrl(x.image_url);const msg=whatsappMessage(x);const wa='https://wa.me/6285813987501?text='+encodeURIComponent(msg);const isFav=getFavorites().includes(String(x.id));return `<article class="card"><div class="cover">${photo?`<img src="${esc(photo)}" alt="Foto ${esc(x.name)}" loading="lazy" onerror="this.onerror=null;this.classList.add('image-error');this.alt='Foto akun tidak dapat dimuat';this.parentElement.classList.add('image-unavailable')"><button type="button" class="cover-zoom" data-product-zoom aria-label="Zoom foto produk">⌕ Zoom</button>`:'🎮'}<button type="button" class="favorite-btn ${isFav?'active':''}" data-favorite-toggle="${esc(x.id)}" aria-label="${isFav?'Hapus dari':'Tambah ke'} favorit">${isFav?'♥':'♡'}</button></div><div class="cardbody"><span class="tag ${x.status==='sold'?'sold':''}">${x.status==='sold'?'Terjual':'Tersedia'}</span><h3>${esc(x.name)}</h3><div class="desc">${esc(x.description||'Detail akun dapat ditanyakan kepada admin.')}</div><div class="price-line"><div><div class="price-label">Harga akun</div><div class="price">${money(x.price)}</div></div><button class="detail" type="button" data-product-detail="${esc(x.id)}">Detail ↗</button></div></div></article>`}).join(''):'<div class="empty">Belum ada akun yang cocok dengan pencarianmu.</div>';
+ if(!$('dashboard').classList.contains('hidden'))adminList();
+}
+function resolveImageUrl(value){
+ const raw=String(value||'').trim();if(!raw)return '';
+ if(/^(https?:|data:|blob:)/i.test(raw))return raw;
+ if(raw.startsWith('//'))return window.location.protocol+raw;
+ return new URL(raw.replace(/^\.\//,''),window.location.href).href;
+}
+function whatsappMessage(x){
+ const photo=resolveImageUrl(x.image_url)||'Foto akun belum tersedia di katalog.';
+ return [
+  'Halo Admin RadenMarket, saya ingin menanyakan stok akun ini.',
+  '',
+  'Nama akun: '+x.name,
+  'Kategori: '+categoryOf(x),
+  'Harga katalog: '+money(x.price),
+  'Status di katalog: '+(x.status==='sold'?'Terjual':'Tersedia'),
+  'Keterangan: '+(x.description||'-'),
+  'Foto akun: '+photo,
+  '',
+  'Apakah akun ini masih ready? Mohon konfirmasi stok terbarunya. Terima kasih.'
+ ].join('\n');
+}
+function showCatalogSkeleton(){
+ $('resultCount').textContent='Memuat katalog...';
+ $('productGrid').setAttribute('aria-busy','true');
+ $('productGrid').innerHTML=Array.from({length:4},()=>`<article class="skeleton-card" aria-hidden="true"><div class="skeleton-cover skeleton-shimmer"></div><div class="skeleton-body"><div class="skeleton-tag skeleton-shimmer"></div><div class="skeleton-line skeleton-title skeleton-shimmer"></div><div class="skeleton-line skeleton-desc skeleton-shimmer"></div><div class="skeleton-line skeleton-desc short skeleton-shimmer"></div><div class="skeleton-bottom"><div class="skeleton-price skeleton-shimmer"></div><div class="skeleton-button skeleton-shimmer"></div></div></div></article>`).join('');
+}
+async function load(){
+ showCatalogSkeleton();
+ let {data,error}=await db.from('ff_accounts').select('*').order('created_at',{ascending:false});
+ $('productGrid').removeAttribute('aria-busy');
+ if(error){$('productGrid').innerHTML='<div class="empty">Gagal memuat stok. Periksa koneksi dan kebijakan RLS.</div>';console.error(error);$('resultCount').textContent='Database belum terhubung';return}
+ items=data||[];render();renderFavoriteCount()
+}
+function adminList(){$('adminList').innerHTML=items.length?items.map(x=>`<div class="adminrow"><div><b>${esc(x.name)}</b><div class="small">${money(x.price)} · ${esc(categoryOf(x))} · ${x.status==='sold'?'Terjual':'Tersedia'}</div></div><div class="actions"><button type="button" class="secondary" data-stock-action="edit" data-stock-id="${esc(String(x.id))}">Edit</button><button type="button" class="danger" data-stock-action="delete" data-stock-id="${esc(String(x.id))}">Hapus</button></div></div>`).join(''):'<p class="small">Belum ada stok.</p>'}
+function reset(){editing=null;['itemName','itemCategory','itemPrice','itemDesc'].forEach(id=>$(id).value='');$('itemImageFile').value='';$('itemImagePreview').src='';$('itemImagePreview').classList.remove('show');$('itemStatus').value='available';$('formTitle').textContent='Tambah stok akun';$('saveBtn').textContent='Simpan stok';$('cancelEdit').classList.add('hidden')}
+window.editItem=id=>{let x=items.find(v=>String(v.id)===String(id));if(!x)return;editing=x.id;$('itemName').value=x.name;$('itemCategory').value=categoryOf(x);$('itemPrice').value=x.price;$('itemStatus').value=x.status;$('itemImageFile').value='';$('itemImagePreview').src=x.image_url||'';$('itemImagePreview').classList.toggle('show',!!x.image_url);$('itemDesc').value=x.description||'';$('formTitle').textContent='Edit stok akun';$('saveBtn').textContent='Simpan perubahan';$('cancelEdit').classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})};
+window.deleteItem=async id=>{if(!confirm('Hapus stok ini?'))return;const old=items.find(v=>String(v.id)===String(id));let {error}=await db.from('ff_accounts').delete().eq('id',id);if(error){alert(error.message);return}if(old?.image_path)await db.storage.from(PROOF_BUCKET).remove([old.image_path]);await load()};
+$('adminList').addEventListener('click',e=>{const button=e.target.closest('button[data-stock-action][data-stock-id]');if(!button)return;const id=button.dataset.stockId;if(button.dataset.stockAction==='edit')window.editItem(id);else if(button.dataset.stockAction==='delete')window.deleteItem(id)});
+async function authUI(){let {data}=await db.auth.getSession();let recovery=location.hash.includes('type=recovery')||new URLSearchParams(location.search).get('type')==='recovery';if(recovery){$('loginSection').classList.remove('hidden');$('dashboard').classList.add('hidden');$('newPasswordSection').classList.remove('hidden');$('loginMsg').textContent='Buat password baru untuk akun admin.';return}let yes=!!data.session;$('loginSection').classList.toggle('hidden',yes);$('dashboard').classList.toggle('hidden',!yes);$('proofAdminPanel').classList.toggle('hidden',!yes);$('ordersAdminPanel').classList.toggle('hidden',!yes);$('unbanAdminPanel').classList.toggle('hidden',!yes);$('announcementAdminPanel').classList.toggle('hidden',!yes);$('rentalAdminPanel').classList.toggle('hidden',!yes);if(yes){await loadRentalAdmin();await load();await loadProofs();await loadAdminOrders();await loadAdminUnban();await loadAnnouncementsAdmin()}}
+
+// ===== BUKTI TRANSAKSI RADENMARKET =====
+const PROOF_BUCKET='transaction-proofs';
+let proofItems=[],proofEditing=null;
+function proofMoney(n){return new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(Number(n)||0)}
+function proofDateLabel(value){
+ if(!value)return '-';
+ const d=new Date(value+'T00:00:00');
+ return Number.isNaN(d.getTime())?value:new Intl.DateTimeFormat('id-ID',{day:'2-digit',month:'long',year:'numeric'}).format(d);
+}
+function renderProofs(){
+ const grid=$('proofGrid');
+ $('proofCount').textContent=proofItems.length+' transaksi';
+ if(!proofItems.length){grid.innerHTML='<div class="proof-empty">Belum ada bukti transaksi yang ditampilkan.</div>';return}
+ grid.innerHTML=proofItems.map(p=>`<article class="proof-card">
+  <img class="proof-photo" src="${esc(p.image_url)}" alt="Bukti transaksi ${esc(p.product_name)}" loading="lazy" data-proof-image="${esc(p.image_url)}">
+  <div class="proof-content">
+   <div class="proof-top"><span class="proof-status">✓ Transaksi selesai</span></div>
+   <h3>${esc(p.product_name)}</h3>
+   ${p.note?`<div class="proof-note">${esc(p.note)}</div>`:''}
+   <div class="proof-meta"><span class="proof-date">${esc(proofDateLabel(p.transaction_date))}</span><span class="proof-price">${proofMoney(p.price)}</span></div>
+   <button type="button" class="proof-open" data-proof-view="${esc(String(p.id))}">Lihat halaman ↗</button>
+  </div></article>`).join('');
+}
+function openProofPage(id){
+ const p=proofItems.find(x=>String(x.id)===String(id));if(!p)return;
+ const detail=$('proofDetailContent');
+ detail.innerHTML=`<div class="proof-detail-success"><div class="proof-check">✓</div><h1>Bukti Transaksi <span>Selesai</span></h1><p>Terima kasih telah bertransaksi di RadenMarket!</p></div>
+  <div class="proof-detail-divider"></div>
+  <article class="proof-detail-card">
+   <img class="proof-detail-photo" src="${esc(p.image_url)}" alt="Foto bukti ${esc(p.product_name)}" data-proof-image="${esc(p.image_url)}">
+   <div class="proof-detail-info"><h2>${esc(p.product_name)}</h2>
+    <div class="proof-detail-line"><span class="ico">▦</span><span>${esc(proofDateLabel(p.transaction_date))}</span></div>
+    <div class="proof-detail-line"><span class="ico">◆</span><span class="proof-detail-price">${proofMoney(p.price)}</span></div>
+    <span class="proof-detail-badge">✓ Transaksi Selesai</span>
+   </div>
+   <button type="button" class="proof-expand" data-proof-image="${esc(p.image_url)}" aria-label="Perbesar foto bukti">⤢</button>
+  </article>
+  <button type="button" class="proof-back" id="proofBackBtn">⌂ &nbsp; Kembali ke Dashboard</button>`;
+ $('publicPage').classList.add('hidden');$('adminPage').classList.add('hidden');$('proofDetailPage').classList.remove('hidden');$('navMenu').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});
+ $('proofBackBtn').addEventListener('click',()=>page('home'));
+}
+
+async function loadProofs(){
+ const {data,error}=await db.from('transaction_proofs').select('*').order('transaction_date',{ascending:false}).order('created_at',{ascending:false});
+ if(error){$('proofGrid').innerHTML='<div class="proof-empty">Bukti transaksi belum dapat dimuat. Admin perlu menjalankan SQL fitur bukti transaksi.</div>';$('proofCount').textContent='Belum tersedia';console.warn('Bukti transaksi:',error.message);return}
+ proofItems=data||[];renderProofs();if(!$('dashboard').classList.contains('hidden'))renderProofAdmin();
+}
+function renderProofAdmin(){
+ const list=$('proofAdminList');if(!list)return;
+ list.innerHTML=proofItems.length?proofItems.map(p=>`<div class="adminrow">
+  <div style="display:flex;align-items:center;gap:10px;min-width:0">
+   <img class="proof-admin-thumb" src="${esc(p.image_url)}" alt="">
+   <div><b>${esc(p.product_name)}</b><div class="small">${proofMoney(p.price)} · ${esc(proofDateLabel(p.transaction_date))}</div></div>
+  </div>
+  <div class="actions"><button type="button" class="secondary" data-proof-action="edit" data-proof-id="${esc(String(p.id))}">Edit</button><button type="button" class="danger" data-proof-action="delete" data-proof-id="${esc(String(p.id))}">Hapus</button></div>
+ </div>`).join(''):'<p class="small">Belum ada bukti transaksi.</p>';
+}
+function resetProofForm(){
+ proofEditing=null;
+ ['proofProduct','proofPrice','proofDate','proofNote'].forEach(id=>$(id).value='');
+ $('proofImage').value='';
+ $('proofSaveBtn').textContent='Tambah bukti transaksi';
+ $('proofCancelBtn').classList.add('hidden');
+}
+window.editProof=id=>{
+ const p=proofItems.find(x=>String(x.id)===String(id));if(!p)return;
+ proofEditing=p.id;
+ $('proofProduct').value=p.product_name;
+ $('proofPrice').value=p.price;
+ $('proofDate').value=p.transaction_date;
+ $('proofNote').value=p.note||'';
+ $('proofImage').value='';
+ $('proofSaveBtn').textContent='Simpan perubahan';
+ $('proofCancelBtn').classList.remove('hidden');
+ $('proofFormMsg').textContent='Pilih foto baru jika ingin mengganti foto lama.';
+ $('proofAdminPanel').scrollIntoView({behavior:'smooth',block:'start'});
+};
+async function uploadProofImage(file){
+ if(!file)throw new Error('Pilih foto bukti transaksi terlebih dahulu.');
+ if(!file.type.startsWith('image/'))throw new Error('File harus berupa gambar.');
+ if(file.size>8*1024*1024)throw new Error('Ukuran gambar maksimal 8 MB.');
+ const ext=(file.name.split('.').pop()||'jpg').toLowerCase().replace(/[^a-z0-9]/g,'')||'jpg';
+ const path=`${Date.now()}-${Math.random().toString(36).slice(2,10)}.${ext}`;
+ const {error}=await db.storage.from(PROOF_BUCKET).upload(path,file,{cacheControl:'3600',upsert:false,contentType:file.type});
+ if(error)throw error;
+ const {data}=db.storage.from(PROOF_BUCKET).getPublicUrl(path);
+ return {path,url:data.publicUrl};
+}
+async function saveProof(){
+ const product=$('proofProduct').value.trim(),price=Number($('proofPrice').value),date=$('proofDate').value,note=$('proofNote').value.trim(),file=$('proofImage').files[0];
+ if(!product){$('proofFormMsg').textContent='Isi nama produk atau transaksi.';return}
+ if($('proofPrice').value===''||!Number.isFinite(price)||price<0){$('proofFormMsg').textContent='Isi harga transaksi dengan benar.';return}
+ if(!date){$('proofFormMsg').textContent='Pilih tanggal transaksi.';return}
+ if(!proofEditing&&!file){$('proofFormMsg').textContent='Pilih foto bukti transaksi.';return}
+ $('proofSaveBtn').disabled=true;$('proofSaveBtn').textContent='Menyimpan...';$('proofFormMsg').textContent='Sedang menyimpan bukti transaksi...';
+ let uploaded=null;
+ try{
+  const old=proofEditing?proofItems.find(x=>String(x.id)===String(proofEditing)):null;
+  if(file)uploaded=await uploadProofImage(file);
+  const row={product_name:product,price,transaction_date:date,note,image_url:uploaded?.url||(old?.image_url||''),image_path:uploaded?.path||(old?.image_path||null)};
+  const result=proofEditing
+   ?await db.from('transaction_proofs').update(row).eq('id',proofEditing)
+   :await db.from('transaction_proofs').insert(row);
+  if(result.error)throw result.error;
+  if(file&&old?.image_path)await db.storage.from(PROOF_BUCKET).remove([old.image_path]);
+  resetProofForm();$('proofFormMsg').textContent='Bukti transaksi berhasil disimpan.';await loadProofs();
+ }catch(err){
+  if(uploaded?.path)await db.storage.from(PROOF_BUCKET).remove([uploaded.path]);
+  $('proofFormMsg').textContent='Gagal menyimpan: '+(err.message||'Periksa koneksi dan izin Supabase.');
+ }finally{$('proofSaveBtn').disabled=false;$('proofSaveBtn').textContent=proofEditing?'Simpan perubahan':'Tambah bukti transaksi'}
+}
+window.deleteProof=async id=>{
+ const p=proofItems.find(x=>String(x.id)===String(id));if(!p)return;
+ if(!confirm('Hapus bukti transaksi ini?'))return;
+ const {error}=await db.from('transaction_proofs').delete().eq('id',id);
+ if(error){alert('Gagal menghapus: '+error.message);return}
+ if(p.image_path)await db.storage.from(PROOF_BUCKET).remove([p.image_path]);
+ await loadProofs();
+};
+$('proofSaveBtn').addEventListener('click',saveProof);
+$('proofCancelBtn').addEventListener('click',()=>{resetProofForm();$('proofFormMsg').textContent='Edit dibatalkan.'});
+$('proofAdminList').addEventListener('click',e=>{
+ const b=e.target.closest('button[data-proof-action][data-proof-id]');if(!b)return;
+ if(b.dataset.proofAction==='edit')window.editProof(b.dataset.proofId);
+ if(b.dataset.proofAction==='delete')window.deleteProof(b.dataset.proofId);
+});
+let productZoom=1;
+function openImageZoom(src,alt='Foto spesifikasi akun'){
+ productZoom=1;$('proofImageModalImg').style.setProperty('--zoom','1');$('proofImageModalImg').style.transform='scale(1)';
+ $('proofImageModalImg').src=src;$('proofImageModalImg').alt=alt;$('proofImageModal').classList.add('show');
+}
+function setProductZoom(next){productZoom=Math.max(1,Math.min(4,next));$('proofImageModalImg').style.transform=`scale(${productZoom})`}
+$('zoomInBtn').onclick=()=>setProductZoom(productZoom+.5);
+$('zoomOutBtn').onclick=()=>setProductZoom(productZoom-.5);
+$('zoomResetBtn').onclick=()=>setProductZoom(1);
+$('zoomCloseBtn').onclick=()=>{$('proofImageModal').classList.remove('show');$('proofImageModalImg').src='';setProductZoom(1)};
+let selectedOrderProduct=null;
+function closeOrderChoice(){ $('orderChoiceModal').classList.remove('show'); selectedOrderProduct=null; }
+function openOrderChoice(product){
+ selectedOrderProduct=product;
+ $('orderChoiceProduct').innerHTML='<strong>'+esc(product.name)+'</strong><br>'+esc(categoryOf(product))+' · '+money(product.price);
+ $('orderChoiceModal').classList.add('show');
+}
+$('orderChoiceClose').addEventListener('click',closeOrderChoice);
+$('orderChoiceCancel').addEventListener('click',closeOrderChoice);
+$('orderChoiceModal').addEventListener('click',e=>{if(e.target===$('orderChoiceModal'))closeOrderChoice()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeOrderChoice()});
+$('orderChoiceModal').addEventListener('click',async e=>{
+ const choice=e.target.closest('[data-order-choice]');
+ if(!choice||!selectedOrderProduct)return;
+ const product=selectedOrderProduct,action=choice.dataset.orderChoice;
+ const customerName=$('orderCustomerName').value.trim(),customerPhone=normalizePhone($('orderCustomerPhone').value);
+ if(!customerName||customerPhone.length<9||customerPhone.length>15){$('orderCreateMsg').textContent='Isi nama dan nomor WhatsApp aktif dengan benar (format 628...).';return}
+ if(product.status!=='available'){$('orderCreateMsg').textContent='Maaf, akun ini tidak tersedia. Silakan pilih akun lain.';return}
+ choice.disabled=true;$('orderCreateMsg').textContent='Mencatat pesanan...';
+ const waWindow=window.open('about:blank','_blank');
+ try{
+  const {data:code,error}=await db.rpc('radenmarket_create_order',{p_product_id:product.id,p_order_type:action,p_customer_name:customerName,p_customer_phone:customerPhone});
+  if(error)throw error;
+  const message=[action,'','Halo Admin RadenMarket, saya membuat pesanan melalui website.','Kode pesanan: '+code,'Nama pemesan: '+customerName,'Nomor WhatsApp: '+customerPhone,'Nama akun: '+product.name,'Kategori: '+categoryOf(product),'Harga katalog: '+money(product.price),'Mohon konfirmasi ketersediaan dan langkah selanjutnya.'].join('\n');
+  closeOrderChoice();$('orderCustomerName').value='';$('orderCustomerPhone').value='';
+  if(waWindow){waWindow.location.href='https://wa.me/'+CS_WA+'?text='+encodeURIComponent(message)}else{window.location.href='https://wa.me/'+CS_WA+'?text='+encodeURIComponent(message)}
+  alert('Pesanan berhasil dicatat. Kode pesanan kamu: '+code+'\nSimpan kode ini untuk melacak status pesanan.');
+ }catch(err){if(waWindow)waWindow.close();$('orderCreateMsg').textContent='Belum berhasil mencatat pesanan: '+(err.message||'Periksa koneksi/database.');}
+ finally{choice.disabled=false}
+});
+$('productGrid').addEventListener('click',e=>{
+ const fav=e.target.closest('[data-favorite-toggle]');if(fav){toggleFavorite(fav.dataset.favoriteToggle);return}
+ const detail=e.target.closest('button[data-product-detail]');
+ if(detail){
+  const product=items.find(x=>String(x.id)===String(detail.dataset.productDetail));
+  if(product)openOrderChoice(product);
+  return;
+ }
+ const btn=e.target.closest('button[data-product-zoom]');if(!btn)return;
+ const img=btn.parentElement.querySelector('img');if(img)openImageZoom(img.currentSrc||img.src,img.alt);
+});
+
+$('proofGrid').addEventListener('click',e=>{
+ const view=e.target.closest('button[data-proof-view]');if(view){openProofPage(view.dataset.proofView);return}
+ const img=e.target.closest('img[data-proof-image]');if(!img)return;
+ $('proofImageModalImg').src=img.dataset.proofImage;$('proofImageModal').classList.add('show');
+});
+$('proofDetailContent').addEventListener('click',e=>{
+ const target=e.target.closest('[data-proof-image]');if(!target)return;
+ $('proofImageModalImg').src=target.dataset.proofImage;$('proofImageModal').classList.add('show');
+});
+// Modal ditutup melalui tombol X di pojok kanan atas.
+
+$('homeBtn').onclick=()=>page('home');$('adminBtn').onclick=()=>page('admin');$('menuBtn').onclick=()=>$('navMenu').classList.toggle('open');
+$('search').oninput=render;$('searchBtn').onclick=render;$('statusFilter').onchange=render;$('sortFilter').onchange=render;
+$('chips').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;chipFilter=b.dataset.filter;document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===b));render()});
+$('resetBtn').onclick=()=>{$('search').value='';$('statusFilter').value='all';$('sortFilter').value='new';chipFilter='all';document.querySelectorAll('.chip').forEach((x,i)=>x.classList.toggle('active',i===0));render()};
+$('signupBtn').onclick=async()=>{const email=$('emailInput').value.trim().toLowerCase(),password=$('passwordInput').value;if(email!=='mahdialdama@gmail.com'){$('loginMsg').textContent='Pendaftaran hanya diizinkan untuk email pemilik RadenMarket.';return}if(password.length<8){$('loginMsg').textContent='Isi password minimal 8 karakter pada kolom password.';return}const {data,error}=await db.auth.signUp({email,password,options:{emailRedirectTo:window.location.origin}});if(error){$('loginMsg').textContent='Pendaftaran gagal: '+error.message;return}if(data.session){$('loginMsg').textContent='Akun berhasil dibuat. Memeriksa akses admin...';await authUI()}else{$('loginMsg').textContent='Pendaftaran berhasil dikirim. Buka email '+email+' lalu konfirmasi akun. Setelah itu kembali ke halaman ini dan login.'}};
+$('forgotBtn').onclick=async()=>{const email=$('emailInput').value.trim();if(!email){$('loginMsg').textContent='Masukkan email admin terlebih dahulu.';return}const {error}=await db.auth.resetPasswordForEmail(email,{redirectTo:'https://radenmarketid.netlify.app/'});$('loginMsg').textContent=error?'Gagal mengirim email: '+error.message:'Link pemulihan password sudah dikirim. Periksa inbox atau folder Spam.'};
+$('updatePasswordBtn').onclick=async()=>{const p=$('newPasswordInput').value,c=$('confirmPasswordInput').value;if(p.length<8){$('passwordMsg').textContent='Password minimal 8 karakter.';return}if(p!==c){$('passwordMsg').textContent='Konfirmasi password tidak sama.';return}const {error}=await db.auth.updateUser({password:p});$('passwordMsg').textContent=error?'Gagal mengubah password: '+error.message:'Password berhasil diperbarui. Silakan login dengan password baru.';if(!error){$('newPasswordInput').value='';$('confirmPasswordInput').value='';await db.auth.signOut();$('newPasswordSection').classList.add('hidden');$('loginSection').classList.remove('hidden')}};
+$('loginBtn').onclick=async()=>{let {error}=await db.auth.signInWithPassword({email:$('emailInput').value.trim(),password:$('passwordInput').value});$('loginMsg').textContent=error?'Login gagal: '+error.message:'Login berhasil';if(!error)await authUI()};
+$('logoutBtn').onclick=async()=>{await db.auth.signOut();reset();await authUI()};
+async function compressStockImage(file){
+ if(!file)return null;
+ // Some Android browsers cannot decode certain camera formats with createImageBitmap.
+ // Try the HTMLImageElement decoder as a fallback; if both fail, retain supported originals.
+ let bitmap=null,objectUrl=null;
+ try{
+  if('createImageBitmap' in window){
+   try{bitmap=await createImageBitmap(file)}catch(_){}
+  }
+  if(!bitmap){
+   objectUrl=URL.createObjectURL(file);
+   bitmap=await new Promise((resolve,reject)=>{
+    const img=new Image();
+    img.onload=()=>resolve(img);
+    img.onerror=()=>reject(new Error('Browser tidak bisa membaca format foto ini.'));
+    img.src=objectUrl;
+   });
+  }
+  const maxSide=1600,scale=Math.min(1,maxSide/Math.max(bitmap.width,bitmap.height));
+  const width=Math.max(1,Math.round(bitmap.width*scale)),height=Math.max(1,Math.round(bitmap.height*scale));
+  const canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;
+  const ctx=canvas.getContext('2d');
+  if(!ctx)throw new Error('Browser tidak mendukung pemrosesan foto.');
+  ctx.fillStyle='#ffffff';ctx.fillRect(0,0,width,height);ctx.drawImage(bitmap,0,0,width,height);
+  const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/jpeg',0.82));
+  if(!blob)throw new Error('Kompresi foto gagal.');
+  return new File([blob],(file.name.replace(/\.[^.]+$/,'')||'foto')+'.jpg',{type:'image/jpeg',lastModified:Date.now()});
+ }catch(err){
+  if(['image/jpeg','image/png','image/webp'].includes(file.type)&&file.size<=8*1024*1024)return file;
+  throw new Error('Foto tidak bisa dibaca atau formatnya tidak didukung. Gunakan JPG, PNG, atau WebP, maksimal 8 MB.');
+ }finally{
+  if(bitmap&&bitmap.close)bitmap.close();
+  if(objectUrl)URL.revokeObjectURL(objectUrl);
+ }
+}
+async function uploadStockImage(file){
+ if(!file)return null;
+ if(!['image/jpeg','image/png','image/webp'].includes(file.type))throw new Error('Format foto harus JPG, PNG, atau WebP.');
+ if(file.size>8*1024*1024)throw new Error('Ukuran foto asli maksimal 8 MB.');
+ if(!navigator.onLine)throw new Error('Koneksi internet terputus. Sambungkan internet lalu coba lagi.');
+ const uploadFile=await compressStockImage(file);
+ if(uploadFile.size>8*1024*1024)throw new Error('Ukuran foto maksimal 8 MB.');
+ const mime=uploadFile.type||file.type;
+ const ext=mime==='image/png'?'png':mime==='image/webp'?'webp':'jpg';
+ const path='stock-images/'+Date.now()+'-'+Math.random().toString(36).slice(2,10)+'.'+ext;
+ let result;
+ try{
+  result=await db.storage.from(PROOF_BUCKET).upload(path,uploadFile,{cacheControl:'3600',upsert:false,contentType:mime});
+ }catch(err){
+  if(err instanceof TypeError||/failed to fetch|networkerror/i.test(err.message||'')){
+   throw new Error('Koneksi ke Supabase Storage gagal saat mengunggah foto. Coba ganti jaringan (Wi-Fi/data seluler), matikan VPN, lalu coba lagi. Jika tetap gagal, periksa Storage > Buckets dan status layanan Supabase.');
+  }
+  throw err;
+ }
+ if(result.error)throw result.error;
+ const {data}=db.storage.from(PROOF_BUCKET).getPublicUrl(path);
+ return {path,url:data.publicUrl}
+}
+$('itemImageFile').addEventListener('change',()=>{const file=$('itemImageFile').files[0];if(!file){$('itemImagePreview').src='';$('itemImagePreview').classList.remove('show');return}if(!file.type.startsWith('image/')){$('formMsg').textContent='Pilih file gambar.';return}const url=URL.createObjectURL(file);$('itemImagePreview').src=url;$('itemImagePreview').classList.add('show')});
+$('saveBtn').onclick=async()=>{let name=$('itemName').value.trim(),price=Number($('itemPrice').value);if(!name||$('itemPrice').value===''||!Number.isFinite(price)||price<0){$('formMsg').textContent='Isi nama akun dan harga dengan benar.';return}let category=$('itemCategory').value.trim();if(!category){$('formMsg').textContent='Isi kategori akun agar stok dapat dihitung per kategori.';return}const old=editing?items.find(x=>String(x.id)===String(editing)):null;let uploaded=null;$('saveBtn').disabled=true;$('saveBtn').textContent='Mengunggah...';$('formMsg').textContent='Menyimpan stok dan mengunggah foto...';try{uploaded=await uploadStockImage($('itemImageFile').files[0]);let row={name,category,price,status:$('itemStatus').value,image_url:uploaded?.url||(old?.image_url||null),image_path:uploaded?.path||(old?.image_path||null),description:$('itemDesc').value.trim()};let result=editing?await db.from('ff_accounts').update(row).eq('id',editing):await db.from('ff_accounts').insert(row);if(result.error)throw result.error;if(uploaded?.path&&old?.image_path)await db.storage.from(PROOF_BUCKET).remove([old.image_path]);reset();$('formMsg').textContent='Stok dan foto berhasil disimpan.';await load()}catch(err){if(uploaded?.path)await db.storage.from(PROOF_BUCKET).remove([uploaded.path]);$('formMsg').textContent='Gagal menyimpan: '+(err.message||'Periksa koneksi dan izin Supabase.')}finally{$('saveBtn').disabled=false;$('saveBtn').textContent=editing?'Simpan perubahan':'Simpan stok'}};
+$('cancelEdit').onclick=reset;$('year').textContent=new Date().getFullYear();db.auth.onAuthStateChange((event)=>{if(event==='PASSWORD_RECOVERY'){$('loginSection').classList.remove('hidden');$('dashboard').classList.add('hidden');$('newPasswordSection').classList.remove('hidden');$('loginMsg').textContent='Buat password baru untuk akun admin.'}else authUI()});load();loadProofs();authUI();setInterval(()=>{load();loadProofs()},20000);
+
+
+// ===== FAVORIT PELANGGAN (tersimpan lokal di perangkat) =====
+function getFavorites(){try{return JSON.parse(localStorage.getItem('radenmarket_favorites')||'[]').map(String)}catch(_){return []}}
+function saveFavorites(list){localStorage.setItem('radenmarket_favorites',JSON.stringify([...new Set(list.map(String))]));renderFavoriteCount();render()}
+function renderFavoriteCount(){$('favoriteCount').textContent=getFavorites().length}
+function toggleFavorite(id){const list=getFavorites();saveFavorites(list.includes(String(id))?list.filter(x=>x!==String(id)):[...list,String(id)])}
+function openFavorites(){const list=getFavorites(),saved=items.filter(x=>list.includes(String(x.id)));$('favoriteList').innerHTML=saved.length?saved.map(x=>{const photo=resolveImageUrl(x.image_url);return `<article class="card"><div class="cover">${photo?`<img src="${esc(photo)}" alt="${esc(x.name)}" loading="lazy">`:'🎮'}<button class="favorite-btn active" data-favorite-toggle="${esc(x.id)}" aria-label="Hapus favorit">♥</button></div><div class="cardbody"><h3>${esc(x.name)}</h3><div class="price">${money(x.price)}</div><button class="detail" data-favorite-detail="${esc(x.id)}" type="button">Detail ↗</button></div></article>`}).join(''):'<div class="favorite-empty">Belum ada akun favorit. Tekan ikon ♡ pada kartu akun untuk menyimpannya.</div>';$('favoriteModal').classList.add('show')}
+$('favoriteNav').addEventListener('click',openFavorites);
+$('favoriteList').addEventListener('click',e=>{const f=e.target.closest('[data-favorite-toggle]');if(f){toggleFavorite(f.dataset.favoriteToggle);openFavorites();return}const d=e.target.closest('[data-favorite-detail]');if(d){const x=items.find(v=>String(v.id)===d.dataset.favoriteDetail);if(x){$('favoriteModal').classList.remove('show');openOrderChoice(x)}}});
+$('trackOrderNav').addEventListener('click',()=>{$('trackResult').innerHTML='';$('trackOrderModal').classList.add('show')});
+document.querySelectorAll('[data-close-feature]').forEach(b=>b.addEventListener('click',()=>$(b.dataset.closeFeature).classList.remove('show')));
+document.querySelectorAll('.feature-modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('show')}));
+function normalizePhone(v){return String(v||'').replace(/\D/g,'').replace(/^0/,'62')}
+$('trackSubmit').addEventListener('click',async()=>{const code=$('trackCode').value.trim().toUpperCase(),customerName=$('trackName').value.trim();if(!code||!customerName){$('trackResult').innerHTML='<div class="feature-result">Masukkan kode pesanan dan nama pembeli dengan benar.</div>';return}$('trackSubmit').disabled=true;$('trackResult').innerHTML='<div class="feature-result">Memeriksa pesanan...</div>';try{const {data,error}=await db.rpc('radenmarket_lookup_order',{p_order_code:code,p_customer_name:customerName});if(error)throw error;if(!data||!data.length){$('trackResult').innerHTML='<div class="feature-result">Pesanan tidak ditemukan. Periksa kembali kode dan nama pembeli.</div>';return}const o=data[0],labels={pending:'Menunggu konfirmasi admin',processing:'Sedang diproses',completed:'Selesai',cancelled:'Dibatalkan'};$('trackResult').innerHTML=`<div class="feature-result"><strong>${esc(o.product_name)}</strong><br>Kode: ${esc(o.order_code)}<br>Jenis: ${esc(o.order_type)}<br>Harga: ${money(o.price)}<br><br><span class="status-pill">${esc(labels[o.status]||o.status)}</span><br><small>Dibuat: ${new Date(o.created_at).toLocaleString('id-ID')}</small></div>`}catch(err){$('trackResult').innerHTML='<div class="feature-result">Gagal memeriksa pesanan: '+esc(err.message||'Periksa koneksi.')+'</div>'}finally{$('trackSubmit').disabled=false}});
+$('floatingCsBtn').addEventListener('click',()=>{const msg='Halo Admin CS RadenMarket, saya ingin meminta bantuan.';window.open('https://wa.me/'+CS_WA+'?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer')});
+
+// ===== PENGUMUMAN PUBLIK & ADMIN =====
+let editingAnnouncement=null;
+async function loadAnnouncements(){const {data,error}=await db.from('announcements').select('id,title,body,created_at').eq('is_active',true).order('created_at',{ascending:false}).limit(3);if(error){console.warn('Pengumuman belum tersedia:',error.message);return}const area=$('announcementArea');area.innerHTML=(data||[]).map(a=>`<article class="announcement-card"><span class="announcement-icon">✦</span><div><h3>${esc(a.title)}</h3><p>${esc(a.body)}</p><span class="announcement-date">Pengumuman RadenMarket</span></div></article>`).join('');area.classList.toggle('hidden',!data?.length)}
+async function loadAdminOrders(){const host=$('adminOrdersList');if(!host)return;const {data,error}=await db.from('customer_orders').select('*').order('created_at',{ascending:false}).limit(100);if(error){host.innerHTML='<p class="small">Gagal memuat pesanan. Pastikan SQL fitur tambahan sudah dijalankan di Supabase.</p>';return}host.innerHTML=data?.length?data.map(o=>`<div class="admin-order-row"><div><b>${esc(o.order_code)} · ${esc(o.product_name)}</b><div class="small">${esc(o.customer_name)} · ${esc(o.customer_phone)} · ${esc(o.order_type)} · ${money(o.price)}</div><div class="small">${new Date(o.created_at).toLocaleString('id-ID')}</div></div><select data-order-status="${esc(o.id)}"><option value="pending" ${o.status==='pending'?'selected':''}>Menunggu konfirmasi</option><option value="processing" ${o.status==='processing'?'selected':''}>Diproses</option><option value="completed" ${o.status==='completed'?'selected':''}>Selesai</option><option value="cancelled" ${o.status==='cancelled'?'selected':''}>Dibatalkan</option></select></div>`).join(''):'<p class="small">Belum ada pesanan masuk.</p>'}
+$('adminOrdersList').addEventListener('change',async e=>{const sel=e.target.closest('[data-order-status]');if(!sel)return;sel.disabled=true;const {error}=await db.from('customer_orders').update({status:sel.value,updated_at:new Date().toISOString()}).eq('id',sel.dataset.orderStatus);if(error){alert('Gagal memperbarui status: '+error.message);await loadAdminOrders()}sel.disabled=false});
+async function loadAnnouncementsAdmin(){const host=$('adminAnnouncementsList');if(!host)return;const {data,error}=await db.from('announcements').select('*').order('created_at',{ascending:false});if(error){host.innerHTML='<p class="small">Jalankan SQL fitur tambahan untuk mengaktifkan pengumuman.</p>';return}host.innerHTML=data?.length?data.map(a=>`<div class="admin-announcement-row"><div><b>${esc(a.title)}</b><div class="small">${a.is_active?'Aktif':'Nonaktif'}</div></div><div class="actions"><button class="secondary" data-ann-edit="${esc(a.id)}" type="button">Edit</button><button class="danger" data-ann-delete="${esc(a.id)}" type="button">Hapus</button></div></div>`).join(''):'<p class="small">Belum ada pengumuman.</p>'}
+$('announcementSaveBtn').addEventListener('click',async()=>{const title=$('announcementTitle').value.trim(),body=$('announcementBody').value.trim();if(!title||!body){$('announcementMsg').textContent='Isi judul dan isi pengumuman.';return}const row={title,body,is_active:$('announcementActive').value==='true'};$('announcementSaveBtn').disabled=true;const result=editingAnnouncement?await db.from('announcements').update(row).eq('id',editingAnnouncement):await db.from('announcements').insert(row);$('announcementSaveBtn').disabled=false;if(result.error){$('announcementMsg').textContent='Gagal menyimpan: '+result.error.message;return}editingAnnouncement=null;$('announcementTitle').value='';$('announcementBody').value='';$('announcementActive').value='true';$('announcementSaveBtn').textContent='Terbitkan pengumuman';$('announcementCancelBtn').classList.add('hidden');$('announcementMsg').textContent='Pengumuman berhasil disimpan.';await loadAnnouncements();await loadAnnouncementsAdmin()});
+$('announcementCancelBtn').addEventListener('click',()=>{editingAnnouncement=null;$('announcementTitle').value='';$('announcementBody').value='';$('announcementSaveBtn').textContent='Terbitkan pengumuman';$('announcementCancelBtn').classList.add('hidden')});
+$('adminAnnouncementsList').addEventListener('click',async e=>{const edit=e.target.closest('[data-ann-edit]'),del=e.target.closest('[data-ann-delete]');if(edit){const {data,error}=await db.from('announcements').select('*').eq('id',edit.dataset.annEdit).single();if(error){alert(error.message);return}editingAnnouncement=data.id;$('announcementTitle').value=data.title;$('announcementBody').value=data.body;$('announcementActive').value=String(data.is_active);$('announcementSaveBtn').textContent='Simpan perubahan';$('announcementCancelBtn').classList.remove('hidden');$('announcementAdminPanel').scrollIntoView({behavior:'smooth'});return}if(del&&confirm('Hapus pengumuman ini?')){const {error}=await db.from('announcements').delete().eq('id',del.dataset.annDelete);if(error)alert(error.message);await loadAnnouncements();await loadAnnouncementsAdmin()}});
+loadAnnouncements();renderFavoriteCount();
+
+// Formulir jasa Unban WhatsApp + pelacakan status RadenMarket
+async function loadAdminUnban(){
+ const host=$('adminUnbanList'); if(!host)return;
+ const {data,error}=await db.from('unban_requests').select('*').order('created_at',{ascending:false}).limit(100);
+ if(error){host.innerHTML='<p class="small">Gagal memuat permintaan Unban. Jalankan setup_database.sql terbaru.</p>';return}
+ const labels={pending:'Menunggu konfirmasi',processing:'Sedang diproses',restored:'Sudah terpulihkan',failed:'Tidak berhasil dipulihkan'};
+ host.innerHTML=data?.length?data.map(u=>`<div class="admin-order-row"><div><b>${esc(u.unban_code)} · ${esc(u.customer_name)}</b><div class="small">${esc(u.customer_phone)} · ${esc(u.unban_type)} · ${money(u.price)}</div><div class="small">Tanggal terblokir: ${esc(u.blocked_date)} · ${new Date(u.created_at).toLocaleString('id-ID')}</div></div><select data-unban-status="${esc(u.id)}"><option value="pending" ${u.status==='pending'?'selected':''}>Menunggu konfirmasi</option><option value="processing" ${u.status==='processing'?'selected':''}>Sedang diproses</option><option value="restored" ${u.status==='restored'?'selected':''}>Sudah terpulihkan</option><option value="failed" ${u.status==='failed'?'selected':''}>Tidak berhasil dipulihkan</option></select></div>`).join(''):'<p class="small">Belum ada permintaan Unban.</p>';
+}
+$('adminUnbanList').addEventListener('change',async e=>{
+ const sel=e.target.closest('[data-unban-status]');if(!sel)return;sel.disabled=true;
+ const {error}=await db.from('unban_requests').update({status:sel.value,updated_at:new Date().toISOString()}).eq('id',sel.dataset.unbanStatus);
+ if(error){alert('Gagal memperbarui status Unban: '+error.message);await loadAdminUnban()}sel.disabled=false;
+});
+(()=>{
+ const modal=document.getElementById('unbanModal'),form=document.getElementById('unbanForm'),price=document.getElementById('unbanPrice'),submit=document.getElementById('unbanSubmit');
+ const trackModal=document.getElementById('unbanTrackModal'),trackForm=document.getElementById('unbanTrackForm');
+ const money=n=>'Rp'+Number(n).toLocaleString('id-ID');
+ function updatePrice(){const selected=form.querySelector('input[name="unbanType"]:checked');const amount=selected?(selected.value==='Permanen'?100000:50000):0;price.textContent=amount?money(amount):'Pilih opsi terlebih dahulu';submit.disabled=!selected;}
+ document.getElementById('openUnbanForm').addEventListener('click',()=>{modal.classList.remove('hidden');document.body.style.overflow='hidden';});
+ function closeModal(el){el.classList.add('hidden');if(modal.classList.contains('hidden')&&trackModal.classList.contains('hidden'))document.body.style.overflow='';}
+ document.getElementById('closeUnbanForm').addEventListener('click',()=>closeModal(modal));
+ modal.addEventListener('click',e=>{if(e.target===modal)closeModal(modal)});
+ document.getElementById('openUnbanTrack').addEventListener('click',()=>{trackModal.classList.remove('hidden');document.body.style.overflow='hidden'});
+ document.getElementById('closeUnbanTrack').addEventListener('click',()=>closeModal(trackModal));
+ trackModal.addEventListener('click',e=>{if(e.target===trackModal)closeModal(trackModal)});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal(modal);closeModal(trackModal)}});
+ form.querySelectorAll('input[name="unbanType"]').forEach(el=>el.addEventListener('change',updatePrice));
+ form.addEventListener('submit',async e=>{
+  e.preventDefault();if(!form.reportValidity())return;
+  const customerName=document.getElementById('unbanCustomerName').value.trim();
+  const phone=document.getElementById('unbanPhone').value.trim();
+  const date=document.getElementById('unbanDate').value;
+  const selected=form.querySelector('input[name="unbanType"]:checked');if(!selected)return;
+  const amount=selected.value==='Permanen'?100000:50000;
+  submit.disabled=true;submit.textContent='Menyimpan permintaan...';
+  const {data:code,error}=await db.rpc('radenmarket_create_unban_request',{p_customer_name:customerName,p_customer_phone:phone,p_blocked_date:date,p_unban_type:selected.value});
+  submit.disabled=false;submit.textContent='Hubungi Admin Segera ↗';
+  if(error){alert('Permintaan belum tersimpan: '+error.message+'. Pastikan setup_database.sql terbaru sudah dijalankan.');return;}
+  const formattedDate=new Date(date+'T00:00:00').toLocaleDateString('id-ID',{day:'2-digit',month:'long',year:'numeric'});
+  const message=['Halo Admin RadenMarket, saya mengajukan jasa Unban WhatsApp.','',
+   'Kode Unban: '+code,'Nama pembeli: '+customerName,'Nomor WhatsApp terblokir: '+phone,
+   'Tanggal kejadian: '+formattedDate,'Opsi: '+selected.value,'Nominal layanan: '+money(amount),'',
+   'Mohon informasi langkah selanjutnya. Saya memahami pemulihan tidak dijamin.'].join('\n');
+  alert('Permintaan berhasil dicatat. Kode Unban kamu: '+code+'\nSimpan kode ini untuk melacak status.');
+  window.open('https://wa.me/'+CS_WA+'?text='+encodeURIComponent(message),'_blank','noopener,noreferrer');
+  form.reset();updatePrice();closeModal(modal);
+ });
+ trackForm.addEventListener('submit',async e=>{
+  e.preventDefault();if(!trackForm.reportValidity())return;
+  const result=document.getElementById('unbanTrackResult');result.textContent='Memeriksa status...';
+  const {data,error}=await db.rpc('radenmarket_lookup_unban',{
+   p_unban_code:document.getElementById('unbanTrackCode').value.trim(),
+   p_customer_name:document.getElementById('unbanTrackName').value.trim(),
+   p_customer_phone:document.getElementById('unbanTrackPhone').value.trim()
+  });
+  if(error){result.textContent='Gagal memeriksa status. Pastikan setup_database.sql terbaru sudah dijalankan.';return;}
+  if(!data?.length){result.textContent='Permintaan tidak ditemukan. Periksa kembali kode, nama, dan nomor WhatsApp.';return;}
+  const u=data[0],labels={pending:'Menunggu konfirmasi',processing:'Sedang diproses',restored:'Sudah Terpulihkan',failed:'Tidak berhasil dipulihkan'};
+  result.innerHTML=`<div class="admin-order-row"><div><b>${esc(labels[u.status]||u.status)}</b><div class="small">Kode: ${esc(u.unban_code)}</div><div class="small">Nama: ${esc(u.customer_name)}</div><div class="small">Layanan: ${esc(u.unban_type)} · ${money(u.price)}</div></div></div>`;
+ });
+})();
+
+// ===== RENTAL AKUN RADENMARKET =====
+let rentalRows=[],rentalEditing=null;
+const rentalFields=[['1','1 jam'],['3','3 jam'],['6','6 jam'],['12','12 jam'],['24','24 jam']];
+async function loadRentals(){const host=$('rentalGrid');if(!host)return;const {data,error}=await db.from('rental_accounts').select('*').order('created_at',{ascending:false});if(error){host.innerHTML='<div class="empty">Katalog rental belum aktif. Admin perlu menjalankan SQL rental di Supabase.</div>';$('rentalCount').textContent='';return}rentalRows=data||[];$('rentalCount').textContent=rentalRows.length+' akun';if(!rentalRows.length){host.innerHTML='<div class="empty">Belum ada akun rental. Nantikan stok dari admin.</div>';return}host.innerHTML=rentalRows.map(a=>{const prices=a.prices||{};const first=rentalFields.find(([k])=>Number(prices[k])>0);return `<article class="rental-card">${a.image_url?`<img src="${esc(a.image_url)}" alt="${esc(a.game_name)} ${esc(a.account_name)}" loading="lazy">`:'<div style="height:155px;display:grid;place-items:center;color:#8ea7da">Belum ada foto</div>'}<div class="rental-card-body"><h3>${esc(a.game_name)} · ${esc(a.account_name)}</h3><div class="rental-spec">${esc(a.specs||'Spesifikasi belum ditambahkan')}</div><div class="rental-prices">${first?'Mulai '+money(prices[first[0]])+' / '+first[1]:'Harga hubungi admin'}</div>${a.status==='available'?`<button class="btn" type="button" data-rent="${esc(a.id)}">Rental Sekarang</button>`:'<button class="secondary" disabled>Tidak tersedia</button>'}</div></article>`}).join('')}
+async function loadRentalAdmin(){const host=$('rAdminList');if(!host)return;const {data,error}=await db.from('rental_accounts').select('*').order('created_at',{ascending:false});if(error){host.innerHTML='<p class="small">Jalankan SQL rental di Supabase untuk mengaktifkan pengelolaan katalog.</p>';return}rentalRows=data||[];host.innerHTML=rentalRows.map(a=>`<div class="rental-admin-item"><div><b>${esc(a.game_name)} · ${esc(a.account_name)}</b><div class="small">${a.status==='available'?'Tersedia':'Tidak tersedia'}</div></div><div class="actions"><button class="secondary" data-r-edit="${esc(a.id)}">Edit</button><button class="danger" data-r-delete="${esc(a.id)}">Hapus</button></div></div>`).join('')||'<p class="small">Belum ada akun rental.</p>';}
+function resetRental(){rentalEditing=null;['rGame','rName','rPrice1','rPrice3','rPrice6','rPrice12','rPrice24','rSpecs'].forEach(id=>$(id).value='');$('rStatus').value='available';$('rImage').value='';$('rPreview').src='';$('rPreview').classList.remove('show');$('rSave').textContent='Simpan akun rental';$('rCancel').classList.add('hidden')}
+$('rImage').addEventListener('change',()=>{const f=$('rImage').files[0];$('rPreview').src=f?URL.createObjectURL(f):'';$('rPreview').classList.toggle('show',!!f)});
+$('rSave').addEventListener('click',async()=>{const game=$('rGame').value.trim(),name=$('rName').value.trim(),specs=$('rSpecs').value.trim();if(!game||!name){$('rMsg').textContent='Nama game dan nama akun wajib diisi.';return}const prices={};for(const [k] of rentalFields){const v=$('rPrice'+k).value;if(v!==''&&(!Number.isFinite(Number(v))||Number(v)<0)){$('rMsg').textContent='Harga harus berupa angka nol atau lebih.';return}prices[k]=v===''?0:Number(v)}const old=rentalRows.find(x=>String(x.id)===String(rentalEditing));let uploaded=null;$('rSave').disabled=true;$('rMsg').textContent='Menyimpan data rental...';try{uploaded=await uploadStockImage($('rImage').files[0]);const row={game_name:game,account_name:name,specs,prices,status:$('rStatus').value,image_url:uploaded?.url||(old?.image_url||null),image_path:uploaded?.path||(old?.image_path||null)};const result=rentalEditing?await db.from('rental_accounts').update(row).eq('id',rentalEditing):await db.from('rental_accounts').insert(row);if(result.error)throw result.error;if(uploaded?.path&&old?.image_path)await db.storage.from(PROOF_BUCKET).remove([old.image_path]);resetRental();$('rMsg').textContent='Akun rental berhasil disimpan.';await loadRentalAdmin();await loadRentals()}catch(e){if(uploaded?.path)await db.storage.from(PROOF_BUCKET).remove([uploaded.path]);$('rMsg').textContent='Gagal menyimpan: '+(e.message||'Periksa koneksi Supabase.')}finally{$('rSave').disabled=false}});
+$('rCancel').addEventListener('click',resetRental);
+$('rAdminList').addEventListener('click',async e=>{const edit=e.target.closest('[data-r-edit]'),del=e.target.closest('[data-r-delete]');if(edit){const a=rentalRows.find(x=>String(x.id)===edit.dataset.rEdit);if(!a)return;rentalEditing=a.id;$('rGame').value=a.game_name;$('rName').value=a.account_name;$('rSpecs').value=a.specs||'';$('rStatus').value=a.status;$('rPreview').src=a.image_url||'';$('rPreview').classList.toggle('show',!!a.image_url);rentalFields.forEach(([k])=>$('rPrice'+k).value=a.prices?.[k]||'');$('rSave').textContent='Simpan perubahan';$('rCancel').classList.remove('hidden');$('rGame').scrollIntoView({behavior:'smooth',block:'center'});return}if(del&&confirm('Hapus akun rental ini?')){const a=rentalRows.find(x=>String(x.id)===del.dataset.rDelete);const {error}=await db.from('rental_accounts').delete().eq('id',del.dataset.rDelete);if(error){alert(error.message);return}if(a?.image_path)await db.storage.from(PROOF_BUCKET).remove([a.image_path]);await loadRentalAdmin();await loadRentals()}});
+function openRentalDetail(a){
+ if(!a)return;
+ const prices=a.prices||{};
+ $('rentalCrumbName').textContent=a.account_name||'Detail akun';
+ const image=a.image_url?`<img src="${esc(a.image_url)}" alt="${esc(a.game_name)} ${esc(a.account_name)}" loading="eager">`:'<div class="rental-detail-noimage">🎮</div>';
+ const packages=rentalFields.filter(([k])=>Number(prices[k])>0);
+ $('rentalDetailContent').innerHTML=`<div class="rental-detail-hero">${image}</div><section class="rental-detail-info"><div class="rental-detail-kicker"><span>JASA RENTAL AKUN</span><span class="rental-ready">● ${a.status==='available'?'Siap disewa':'Tidak tersedia'}</span></div><h1>${esc(a.account_name)}</h1><div class="rental-detail-specs">${esc(a.specs||'Spesifikasi akun belum ditambahkan.')}</div><div class="rental-package-title">Paket sewa</div><div class="rental-package-list">${packages.length?packages.map(([k,label])=>`<div class="rental-package"><div><strong>${label}</strong><span class="rental-package-price">${money(prices[k])}</span></div><button type="button" data-rent-package="${k}" ${a.status!=='available'?'disabled':''}>Sewa ↗</button></div>`).join(''):'<p class="small">Harga paket belum ditentukan. Silakan hubungi admin.</p>'}</div><p class="rental-detail-note">Pastikan ketersediaan akun dengan admin sebelum melakukan pembayaran. Transaksi dikonfirmasi langsung oleh admin RadenMarket.</p></section>`;
+ $('publicPage').classList.add('hidden');$('proofDetailPage').classList.add('hidden');$('adminPage').classList.add('hidden');$('rentalDetailPage').classList.remove('hidden');$('navMenu').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});
+ $('rentalDetailContent').querySelectorAll('[data-rent-package]').forEach(btn=>btn.addEventListener('click',()=>{
+  const key=btn.dataset.rentPackage;const label=rentalFields.find(([k])=>k===key)?.[1]||key+' jam';
+  const msg=`Halo Admin RadenMarket, saya ingin menyewa akun.\n\nGame: ${a.game_name}\nAkun: ${a.account_name}\nDurasi: ${label}\nHarga: ${money(prices[key])}\nSpesifikasi: ${a.specs||'-'}\n\nMohon konfirmasi ketersediaan dan cara pembayaran.`;
+  window.open('https://wa.me/'+CS_WA+'?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer');
+ }));
+}
+$('rentalBackTop').addEventListener('click',()=>page('home'));
+$('rentalGrid').addEventListener('click',e=>{const b=e.target.closest('[data-rent]');if(!b)return;const a=rentalRows.find(x=>String(x.id)===b.dataset.rent);openRentalDetail(a)});
+loadRentals();
+
+</script></body></html>
